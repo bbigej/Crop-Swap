@@ -1,0 +1,12 @@
+ul {
+  border:solid black 1px;
+  height: 40px;
+}
+
+#new-user {
+  display: block;
+}
+
+#login-user {
+  display: inline-block;
+}
