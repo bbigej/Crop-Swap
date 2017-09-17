@@ -1,3 +1,28 @@
+
+ul {
+    border: solid black 1px;
+    height: 40px;
+}
+
+li {
+    display: inline-block;
+}
+
+p {
+    height: 300px;
+    width: 400px;
+    border: solid black 1px;
+}
+
+img {
+    border: solid black 1px;
+}
+ 
+#main {
+    display: flex;
+    justify-content: space-around;
+}
+
 .welcomeBackground{
     background-image: url("../images/mainBackground.jpg");
     background-position: 0em 3.5em;
@@ -19,4 +44,5 @@ li {
 
 header {
   background-color: white
+
 }
