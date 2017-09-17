@@ -1,12 +1,55 @@
-ul {
-  border:solid black 1px;
-  height: 40px;
+#login-user {
+  display: inline-block;
 }
 
 #new-user {
   display: block;
 }
 
-#login-user {
+ul {
+    border: solid black 1px;
+    height: 40px;
+}
+
+li {
+    display: inline-block;
+}
+
+p {
+    height: 300px;
+    width: 400px;
+    border: solid black 1px;
+}
+
+img {
+    border: solid black 1px;
+}
+
+#main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.welcomeBackground{
+    background-image: url("../images/mainBackground.jpg");
+    background-position: 0em 3.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: inherit;
+    /*display: flex */
+    /*background-size: 1000px 1500px;*/
+}
+
+.welcomeHeader {
+  border: none;
+  height: 40px;
+}
+
+li {
   display: inline-block;
+}
+
+header {
+  background-color: white
+
 }
