@@ -1,3 +1,10 @@
+#login-user {
+  display: inline-block;
+}
+
+#new-user {
+  display: block;
+}
 
 ul {
     border: solid black 1px;
@@ -17,7 +24,7 @@ p {
 img {
     border: solid black 1px;
 }
- 
+
 #main {
     display: flex;
     justify-content: space-around;
