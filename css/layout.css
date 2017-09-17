@@ -1,3 +1,4 @@
+
 ul {
     border: solid black 1px;
     height: 40px;
@@ -20,4 +21,28 @@ img {
 #main {
     display: flex;
     justify-content: space-around;
+}
+
+.welcomeBackground{
+    background-image: url("../images/mainBackground.jpg");
+    background-position: 0em 3.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: inherit;
+    /*display: flex */
+    /*background-size: 1000px 1500px;*/
+}
+
+.welcomeHeader {
+  border: none;
+  height: 40px;
+}
+
+li {
+  display: inline-block;
+}
+
+header {
+  background-color: white
+
 }
