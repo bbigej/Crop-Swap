@@ -10,7 +10,10 @@ li {
 p {
     height: 300px;
     width: 400px;
-    margin: 0px;
+    border: solid black 1px;
+}
+
+img {
     border: solid black 1px;
 }
  
