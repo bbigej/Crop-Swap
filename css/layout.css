@@ -1,0 +1,20 @@
+ul {
+    border: solid black 1px;
+    height: 40px;
+}
+
+li {
+    display: inline-block;
+}
+
+p {
+    height: 300px;
+    width: 400px;
+    margin: 0px;
+    border: solid black 1px;
+}
+ 
+#main {
+    display: flex;
+    justify-content: space-around;
+}
