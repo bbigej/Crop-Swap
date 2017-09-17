@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <script type="text/javascript" src="app.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Profile Page</title>
     </head>
     <body>
+        <header>
+          <h1>Crop Swap: Profile Page</h1>
+          <nav>
+            <ul>
+              <li><a href=""><Home</a>Home</li>
+              <li><a href=""><Inventory</a>Inventory</li>
+            </ul>
+          </nav>
+        </header>
 
+        <main>
+          <div class="profile-container">
+              <img src="profilePic.png">
+              <h2 class="username">Username</h2>
+          </div>
+          <div class="inventory-list">
+            <select name="Crop">
+              <option value="Apples">Apples</option>
+              <option value="Carrots">Carrots</option>
+              <option value="Eggplant">Eggplant</option>
+            </select>
+            <button type="button" class="addCrop">Add Crop</button>
+            <button type="button" class="removeCrop">Remove Crop</button>
+          </div>
+        </main>
+        <footer>
+          &copy; 2017 Crop Swap
+        </footer>
     </body>
 </html>
