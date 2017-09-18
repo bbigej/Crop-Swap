@@ -35,7 +35,7 @@ img {
     background-position: 0em 3.5em;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: inherit;
+    opacity: 0.5;
     /*display: flex */
     /*background-size: 1000px 1500px;*/
 }
@@ -52,4 +52,32 @@ li {
 header {
   background-color: white
 
+}
+
+h1  {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  margin: 0;
+  padding: 20px;
+}
+
+.profile-container {
+  padding-left: 20px;
+}
+
+.profile-container img {
+  width: 200px;
+}
+
+.produce-table {
+  padding-left: 100px;
+}
+
+.user-produce {
+  border: 1px solid black;
+  padding: 5px;
+  border-spacing: 5px;
 }
