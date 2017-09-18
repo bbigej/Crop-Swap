@@ -45,11 +45,10 @@ img {
   height: 40px;
 }
 
-li {
-  display: inline-block;
-}
-
 header {
   background-color: white
+}
 
+fieldset {
+    height: 135px;
 }
