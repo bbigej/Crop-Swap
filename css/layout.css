@@ -1,19 +1,23 @@
 #login-user {
-  display: inline-block;
-}
+  }
 
 #new-user {
   display: block;
+
 }
 
-ul {
-    border: none;
+.hide {
+  display:none;
+}
+
+header ul {
+    border: solid black 1px;
     height: 40px;
     text-align: right;
     margin-right: 40px;
 }
 
-li {
+header li {
     display: inline-block;
     font-family: arial;
     text-shadow: 2px;
@@ -22,11 +26,14 @@ li {
     padding: 4px;
 
 }
+#welcomelist {
+  border:none;
+}
 
 .swap {
     height: 300px;
     width: 400px;
-    border: solid black 1px;
+    border: solid black 1px;*/
 }
 
 .map  {
@@ -86,4 +93,16 @@ main {
 
 .inventory-list {
   padding-left: 100px;
+}
+
+.profile-container img {
+  width: 200px;
+}
+
+.inventory-list {
+  padding-left: 100px;
+}
+
+fieldset {
+    height: 135px;
 }

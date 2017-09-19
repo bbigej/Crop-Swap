@@ -4,6 +4,7 @@
         <title>Produce - Crop Swap</title>
         <link rel="stylesheet" type="text/css" href="css/layout.css" />
         <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/inventory.js"></script>
     </head>
     <header class = "inventory-header">
         <ul>
@@ -14,10 +15,21 @@
     <body>
         <img src="images/inventoryBackground.jpg" class=inventory-photo>
         <div id="main">
-        <p class="swap"> Swap my Crops! </br> </br>
-         Crop finder form/whatever goes here.</p>
-        <img src="images/portland-map.gif" class="map">
+        <fieldset>
+        <legend>Swap my Crops!</legend>
+        <label> I'm looking for:</label>
+        <select name ="produce options">
+                <option value="-">-</option>
+            <option value="carrot" class="produce-location-option">Carrots</option>
+            <option value="apple" class="produce-location-option">Apples</option>
+            <option value="kale" class="produce-location-option">Kale</option>
+            <option value="strawberry" class="produce-location-option">Strawberries</option>
+            <option value="squash" class="produce-location-option">Squash</option>
+        </select>
+        </fieldset>
+        <img src="images/portland-map.gif">
         </div>
+        <p id="address-paragraph">Address text goes here.</p>
     </body>
     <footer>
         &copy; Crop Swap 2017
