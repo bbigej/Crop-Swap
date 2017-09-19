@@ -2,34 +2,43 @@
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="css/layout.css" />
-        <title></title>
+        <title>Crop Swap</title>
       <header>
     </head>
-    <header>
+    <header class = "welcome-header">
         <ul>
-            <li>Profile</li>
-            <li>Produce</li>
+          <a href="profile.html"><li>My Profile</li></a>
+          <a href="inventory.html"><li>Produce</li></a>
         </ul>
     </header>
-    <body class= "welcomeBackground">
+    <body>
+      <img src="images/mainBackground.jpg" class="welcome-photo" />
       <div id="quote"> "Sharing is Caring"</div>
 
-      <p> Welcome to the Crop Swap. We're a community organized group that brings people and their excess
-        food together to share</p>
-      <p> It's simple, all you need to do is find the location in your <a href = "" >neighborhood </a>, log
-        what food you're planning to bring, and then come with your <a href = "">food</a>, ready to swap for
-        other peoples food.<p>
+      <p class = "welcomepage"> We're a community organized group that connects people and their excess food together
+        to share with each other</p>
+      <p class = "welcomepage"> It's simple, all you need to do is </p>
+      <ul id="welcomelist">
+        <li> Create an account below</li>
+        <li> Find the location in your <a href = "inventory.html"> neighborhood </a></li>
+        <li> Add what food you're planning to bring in your <a href = "profile.html">profile</a></li>
+        <li> Then come with your excess food, ready to swap for other peoples food.</li>
+      </ul><br><br>
 
+    <input id="new-user" type = "button" value= "Create an account" onclick = "createAccountForm()"/><br>
+    <form id="new-user-info" name=new-user-form></form><br>
 
-    <input id="new-user" type = "button" value= "Create an account" onclick = "createAccountForm()"/>
-    <form name=new-user-form><fieldset id="new-user-info"></fieldset></form><br>
-
-    <p> Username:
-    <input id="login-user" input type = "text" name="Username:" maxLength="20"/>
-    </p>
-    <p> Password:
-    <input id="login-user" input type = "password" name="Password:" maxlength="20"/>
-    </p>
+    <div id="login-user">
+      <label> Username:
+        <input input type = "text" name="Username:" maxLength="20"/>
+      </label><br>
+      <label> Password:
+        <input input type = "password" name="Password:" maxlength="20"/>
+      </label>
+    </div>
     <script type= "text/javascript" src = "js/app.js"></script>
+    <footer>
+      &copy; 2017 Crop Swap
+    </footer>
   </body>
 </html>

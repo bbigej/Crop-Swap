@@ -1,27 +1,43 @@
 #login-user {
-  display: inline-block;
-}
+  }
 
 #new-user {
   display: block;
+
 }
 
-ul {
+.hide {
+  display:none;
+}
+
+header ul {
     border: solid black 1px;
     height: 40px;
+    text-align: right;
+    margin-right: 40px;
 }
 
-li {
+header li {
     display: inline-block;
+    font-family: arial;
+    text-shadow: 2px;
+    font-size: 20px;
+    margin: 10px;
+    padding: 4px;
+
+}
+#welcomelist {
+  border:none;
 }
 
-p {
+.swap {
     height: 300px;
     width: 400px;
-    border: solid black 1px;
+    border: solid black 1px;*/
 }
 
-img {
+.map  {
+    margin-top: 100px;
     border: solid black 1px;
 }
 
@@ -30,28 +46,65 @@ img {
     justify-content: space-around;
 }
 
-.welcomeBackground{
-    background-image: url("../images/mainBackground.jpg");
-    background-position: 0em 3.5em;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
-    /*display: flex */
-    /*background-size: 1000px 1500px;*/
+/*Background Images*/
+
+.welcome-photo, .profile-photo, .inventory-photo {
+  opacity: 0.5;
+  min-width: 100vw;
+  min-height:100vh;
+  position: absolute;
+  z-index: -1;
 }
 
-.welcomeHeader {
+body {
+  margin: 0;
+  min-height:100vh;
+  overflow: hidden;
+}
+
+/*Header and Footer Section*/
+.profile-header .welcome-header .inventory-header {
+  background-color: white
+  border: none;
+  height: 40px;
+  position: fixed;
+
+}
+
+footer {
+  background-color:white
   border: none;
   height: 40px;
 }
 
-li {
-  display: inline-block;
+main {
+  display: flex;
+  margin: 0;
+  padding: 20px;
 }
 
-header {
-  background-color: white
+.profile-container {
+  padding-left: 20px;
+}
 
+.profile-container img {
+  width: 200px;
+}
+
+.inventory-list {
+  padding-left: 100px;
+}
+
+.profile-container img {
+  width: 200px;
+}
+
+.inventory-list {
+  padding-left: 100px;
+}
+
+fieldset {
+    height: 135px;
 }
 
 h1  {
