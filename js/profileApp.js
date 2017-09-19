@@ -1,9 +1,10 @@
-//TODO get user data for local storage 
+//TODO get user data for local storage
+
+
 
 var cropArray = ["Apples", "Carrots", "Strawberries", "Squash", "Kale"];
 
-
-function cropInfo(crop, index) {
+function getCropInfo(crop, index) {
 
   var tableCrop = document.createElement("tr");
   var tdCrop = document.createElement("td");
@@ -34,11 +35,12 @@ function cropInfo(crop, index) {
 
 function buildTable() {
   for (var index = 0; index < cropArray.length; index++) {
-    cropInfo(cropArray[index], index);
+    getCropInfo(cropArray[index], index);
   }
 }
+buildTable();
+
+
 
 // TODO: function for event handler for the add and remove buttons
 //    show and hide remove button
-
-buildTable();
