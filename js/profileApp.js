@@ -1,6 +1,8 @@
 //TODO get user data for local storage
 
+//=========================
 
+//========================
 
 var cropArray = ["Apples", "Carrots", "Strawberries", "Squash", "Kale"];
 
@@ -39,7 +41,6 @@ function buildTable() {
   }
 }
 buildTable();
-
 
 
 // TODO: function for event handler for the add and remove buttons
