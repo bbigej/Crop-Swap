@@ -6,7 +6,6 @@
 
 }
 
-
 .hide {
   display:none;
 }
@@ -83,4 +82,8 @@ main {
 
 .inventory-list {
   padding-left: 100px;
+}
+
+fieldset {
+    height: 135px;
 }
