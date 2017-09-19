@@ -1,24 +1,31 @@
 #login-user {
-  display: inline-block;
-}
+  }
 
 #new-user {
   display: block;
+
 }
 
-ul {
+.hide {
+  display:none;
+}
+
+header ul {
     border: solid black 1px;
     height: 40px;
 }
 
-li {
+header li {
     display: inline-block;
 }
+#welcomelist {
+  border:none;
+}
 
-p {
+/*p {
     height: 300px;
     width: 400px;
-    border: solid black 1px;
+    border: solid black 1px;*/
 }
 
 img {
@@ -36,6 +43,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     opacity: inherit;
+    opacity: 0.5;
     /*display: flex */
     /*background-size: 1000px 1500px;*/
 }
@@ -47,6 +55,33 @@ img {
 
 header {
   background-color: white
+
+}
+
+header {
+  border: solid black 1px;
+}
+
+h1  {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  margin: 0;
+  padding: 20px;
+}
+
+.profile-container {
+  padding-left: 20px;
+}
+
+.profile-container img {
+  width: 200px;
+}
+
+.inventory-list {
+  padding-left: 100px;
 }
 
 fieldset {
