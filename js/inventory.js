@@ -14,13 +14,14 @@ produceArrary.push(new MarketLocation("Southeast","3203 SE Woodstock Blvd",));
 document.getElementsByClassName("produce-location-option").addEventListener("change", showLocations);
 
 showLocations = function() {
-    //get the crop index from users profiles
-    while (UserProfile[0].crops == 0) {
+    //get crop index
+    for (var index = 0; index < userProfile.length ; index++) {
+        UserProfile[0].crops == 0
         // show image(s) on map
         //render address to page in text element under the form
-        
+
         // "No options available" in text element
-        }
+        
     }
 
 
