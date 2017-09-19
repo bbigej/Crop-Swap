@@ -15,21 +15,41 @@
       <img src="images/profileBackground.jpg" class="profile-photo" />
         <main>
           <div class="profile-container">
-              <img src="profilePic.png">
-              <h2 class="username">Username</h2>
+              <img id="user-image"src="profilePic.png">
+              <h2 id="user-name">Username</h2>
           </div>
-          <div class="inventory-list">
-            <select name="Crop">
-              <option value="Apples">Apples</option>
-              <option value="Carrots">Carrots</option>
-              <option value="Eggplant">Eggplant</option>
-            </select>
-            <button type="button" class="addCrop">Add Crop</button>
-            <button type="button" class="removeCrop">Remove Crop</button>
+          <div class="produce-table">
+            <h1>Here you can ADD or REMOVE crop items to swap</h1>
+            <table id="user-produce">
+                <!-- <tr>
+                  <td>Apples</td>
+                  <td><button type="button" class="addCrop">Add Crop</button></td>
+                  <td><button type="button" class="removeCrop">Remove Crop</button></td>
+                </tr> -->
+                <!-- <tr>
+                  <td>Carrots</td>
+                  <td><button type="button" class="addCrop">Add Crop</button></td>
+                  <td><button type="button" class="removeCrop">Remove Crop</button></td>
+                </tr>
+                <tr>
+                  <td>Strawberries</td>
+                  <td><button type="button" class="addCrop">Add Crop</button></td>
+                  <td><button type="button" class="removeCrop">Remove Crop</button></td>
+                </tr>
+                <tr>
+                  <td>Squash</td>
+                  <td><button type="button" class="addCrop">Add Crop</button></td>
+                  <td><button type="button" class="removeCrop">Remove Crop</button></td>
+                </tr>
+                <tr>
+                  <td>Kale</td>
+                  <td><button type="button" class="addCrop">Add Crop</button></td>
+                  <td><button type="button" class="removeCrop">Remove Crop</button></td>
+                </tr> -->
+              </table>
           </div>
         </main>
-        <footer>
-          &copy; 2017 Crop Swap
-        </footer>
+        <footer class="profile-footer"> Pending </footer>
+        <script type="text/javascript" src="js/profileApp.js"></script>
     </body>
 </html>

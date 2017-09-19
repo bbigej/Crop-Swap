@@ -106,3 +106,31 @@ main {
 fieldset {
     height: 135px;
 }
+
+h1  {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  margin: 0;
+  padding: 20px;
+}
+
+.profile-container {
+  padding-left: 20px;
+}
+
+.profile-container img {
+  width: 200px;
+}
+
+.produce-table {
+  padding-left: 100px;
+}
+
+.user-produce {
+  border: 1px solid black;
+  padding: 5px;
+  border-spacing: 5px;
+}
