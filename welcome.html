@@ -28,17 +28,18 @@
     <input id="new-user" type = "button" value= "Create an account" onclick = "createAccountForm()"/><br>
     <form id="new-user-info" name=new-user-form></form><br>
 
-    <div id="login-user">
+    <form id="login-user">
       <label> Username:
-        <input input type = "text" name="Username:" maxLength="20"/>
+        <input input type = "text" name="Username" maxLength="20"/>
       </label><br>
       <label> Password:
-        <input input type = "password" name="Password:" maxlength="20"/>
+        <input input type = "password" name="Password" maxlength="20"/><br><br>
       </label>
-    </div>
+        <input input type = "submit" name = "Submit" onclick = "loginUser()"/>
+    </form>
     <script type= "text/javascript" src = "js/app.js"></script>
-    <footer>
+    <!-- <footer>
       &copy; 2017 Crop Swap
-    </footer>
+    </footer> -->
   </body>
 </html>

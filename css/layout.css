@@ -71,11 +71,11 @@ body {
 
 }
 
-footer {
+/*footer {
   background-color:white
   border: none;
   height: 40px;
-}
+}*/
 
 main {
   display: flex;
