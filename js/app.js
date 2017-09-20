@@ -17,7 +17,8 @@ userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "pict
 var createAccountForm = function(){
     var input = document.getElementById("new-user");
     input.parentElement.removeChild(input); //removes the create an account button from the screen
-    var login=document.login_user;
+    //var login = document.getElementById("login_user");
+    var login = document.login_user;
     login.setAttribute("class", "hide");
 
     var space = document.createElement("br");  //create a break in HTML
@@ -92,10 +93,14 @@ var createAccountForm = function(){
     var newUserName = form.elements["userName"].value;
     var newUserPassword = form.elements["password"].value;
     userProfile.push(new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword));
+    localStorage.setItem("userInfo", JSON.stringify(userProfile)); //adds to local storage
     document.getElementById("new-user-info").innerHTML = ""; //removes the form from the screen
-    var login = document.getElementById("login-user");
-    login.setAttribute("class", "");
-}
+  //  var login = document.getElementById("login_user");
+    var login = document.login_user;
+    login.setAttribute("class", ""); //unhides the user login
+    //document.write = "Thank you for creating an account";
+    window.location = "profile.html"
+  }
 
 //this is a function to validate the username/password inputs
 function loginUser() {
@@ -103,16 +108,23 @@ function loginUser() {
   var userNameInput = form.Username.value;
   var passwordInput = form.Password.value;
   var userMatch = userProfile.find (function (profile) {
-    return((profile.userName == userNameInput) && (profile.password == passwordInput))
-  });
+      return((profile.userName == userNameInput) && (profile.password == passwordInput))
+    });
     if(!userMatch) {
-      var form = document.getElementById("new-user-info"); //create the HTML form grouping
+      var form = document.getElementById("new-user-info"); //creates the html from grouping
       var instructions = document.createElement("p");
-      instructions.innerText = "No account found. Please create an account.";
+      instructions.innerText = "No account found. Please create an account below.";
       form.appendChild(instructions);
-      createAccountForm ();     
-      console.log("No account found. Please create an account");
-  } else {
-    window.location = "profile.html"
-  }
+      createAccountForm ();
+      } else {
+      window.location = "profile.html"
+    }
 }
+
+//maybe not needed
+// function pageRefresh () {
+//   if (localStorage.getItem("userInfo") != null) {
+//     userProfile = JSON.parse(localStorage.getItem("userInfo"))
+//   }
+//   "load the page"
+// }
