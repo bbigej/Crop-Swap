@@ -57,7 +57,7 @@ header li {
 
 body {
   margin: 0;
-  min-height:100vh;
+  min-height:100vh;*/
   overflow: hidden;
 }
 
@@ -67,7 +67,6 @@ body {
   border: none;
   height: 40px;
   position: fixed;
-
 }
 
 /*footer {
@@ -82,20 +81,14 @@ main {
   padding: 20px;
 }
 
-.profile-container {
-  padding-left: 20px;
-}
-
-.profile-container img {
-  width: 200px;
-}
-
 .inventory-list {
   padding-left: 100px;
 }
 
-.profile-container img {
+#profile-container img {
   width: 200px;
+  height: 200px;
+  background-color: blue;
 }
 
 .inventory-list {
@@ -132,4 +125,13 @@ main {
   border: 1px solid black;
   padding: 5px;
   border-spacing: 5px;
+}
+
+#star1 {
+    position: absolute;
+    left: 780px;
+    top: 335px;
+    height: 15px;
+    width:15px;
+    visibility: hidden;
 }
