@@ -17,7 +17,7 @@ userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "pict
 var createAccountForm = function(){
     var input = document.getElementById("new-user");
     input.parentElement.removeChild(input); //removes the create an account button from the screen
-    var login=document.getElementById("login-user");
+    var login=document.login_user;
     login.setAttribute("class", "hide");
 
     var space = document.createElement("br");  //create a break in HTML
@@ -99,15 +99,20 @@ var createAccountForm = function(){
 
 //this is a function to validate the username/password inputs
 function loginUser() {
-  var form= document.getElementById("login-user");
-  // var userNameInput = form.;
-  var passwordInput = document.getElementById("input").innerHTML = "Password";
-  var userMatch = userProfile.find(function(profile) {
+  var form = document.login_user;
+  var userNameInput = form.Username.value;
+  var passwordInput = form.Password.value;
+  var userMatch = userProfile.find (function (profile) {
     return((profile.userName == userNameInput) && (profile.password == passwordInput))
-    if(!userMatch) {
-      document.getElementById("login-user").innerText = "No account found. Please create an account"
-    } else {
-      "link to userprofile screen"
-    }
   });
+    if(!userMatch) {
+      var form = document.getElementById("new-user-info"); //create the HTML form grouping
+      var instructions = document.createElement("p");
+      instructions.innerText = "No account found. Please create an account.";
+      form.appendChild(instructions);
+      createAccountForm ();     
+      console.log("No account found. Please create an account");
+  } else {
+    window.location = "profile.html"
+  }
 }
