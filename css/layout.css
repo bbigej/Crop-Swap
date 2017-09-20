@@ -57,8 +57,8 @@ header li {
 
 body {
   margin: 0;
-  min-height:100vh;*/
-  overflow: hidden;
+  min-height:100vh;
+ /* overflow: hidden; */
 }
 
 /*Header and Footer Section*/
@@ -129,9 +129,49 @@ main {
 
 #star1 {
     position: absolute;
-    left: 780px;
-    top: 335px;
+    left: 295px;
+    top: 265px;
     height: 15px;
     width:15px;
-    visibility: hidden;
+    visibility: visible;
+}
+
+#star2 {
+    position: absolute;
+    left: 290px;
+    top: 275px;
+    height: 15px;
+    width:15px;
+    visibility: visible;
+}
+
+#star3 {
+    position: absolute;
+    left: 330px;
+    top: 290px;
+    height: 15px;
+    width:15px;
+    visibility: visible;
+}
+
+#star4 {
+    position: absolute;
+    left: 330px;
+    top: 230px;
+    height: 15px;
+    width:15px;
+    visibility: visible;
+}
+
+#star5 {
+    position: absolute;
+    left: 340px;
+    top: 280px;
+    height: 15px;
+    width:15px;
+    visibility: visible;
+}
+
+#map-container {
+    position: relative;
 }

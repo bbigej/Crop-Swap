@@ -11,7 +11,7 @@ var UserProfile = function (firstname, lastname, username, password, neighborhoo
 
 //Array of user objects
 var userProfile = [];
-userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "picture", 0));
+userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "picture", "Carrots"));
 
 //function to create a form that lets a new user add their profile
 var createAccountForm = function(){
