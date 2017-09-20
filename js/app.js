@@ -96,3 +96,18 @@ var createAccountForm = function(){
     var login = document.getElementById("login-user");
     login.setAttribute("class", "");
 }
+
+//this is a function to validate the username/password inputs
+function loginUser() {
+  var form = document.getElementById("login-user");
+  var userNameInput = form.Username;
+  var passwordInput = document.getElementById("input").innerHTML = "Password";
+  var userMatch = userProfile.find (function (profile) {
+      return((profile.userName == userNameInput) && (profile.password == passwordInput))
+      if(!userMatch) {
+        "No account found. Please create an account"
+      } else {
+        "link to userprofile screen"
+      }
+    });
+}
