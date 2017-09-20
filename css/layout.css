@@ -26,7 +26,7 @@ header li {
 
 }
 #welcomelist {
-  border:none;
+  display: block;
 }
 
 .swap {
