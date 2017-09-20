@@ -127,3 +127,12 @@ main {
   padding: 5px;
   border-spacing: 5px;
 }
+
+#star1 {
+    position: absolute;
+    left: 780px;
+    top: 335px;
+    height: 15px;
+    width:15px;
+    visibility: hidden;
+}
