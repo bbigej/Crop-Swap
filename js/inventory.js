@@ -26,21 +26,31 @@ function updatePage() {
 
 //code that adds stars to the map and updates the text on the page
 function showLocations() {
-    if (userProfile[0].crops == produceArray.indexOf("Carrots")) {
+    if (produceLocationOptions.value == userProfile[0].crops) {
         document.getElementById("star1").style.visibility = 'visible';
         message = "Address: 123 Marshall St.";
         updatePage();
-    } else {
+    }
+    
+    
+    
+    
+    
+    
+    
+    else {
+        document.getElementById("star1").style.visibility = 'hidden';
         message = "No options available.";
         updatePage();
     }
 
 }
 
-//event listener to add event listener to the drop down menu
-window.addEventListener("load", addListeners);
+var produceLocationOptions = null;
 
 function addListeners() {
-var produceLocationOptions = document.getElementById("produce-location-options");
-produceLocationOptions.addEventListener("change", showLocations);
+    produceLocationOptions = document.getElementById("produce-location-options");
+    produceLocationOptions.addEventListener("change", showLocations);
 }
+
+window.addEventListener("load", addListeners);

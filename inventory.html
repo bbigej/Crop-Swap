@@ -15,22 +15,28 @@
     <body>
         <img src="images/inventoryBackground.jpg" class=inventory-photo>
         <div id="main">
-        <fieldset>
-        <legend>Swap my Crops!</legend>
-        <label> I'm looking for:</label>
-        <select name="produce-options" id="produce-location-options">
-                <option value="-">-</option>
-            <option value="carrot">Carrots</option>
-            <option value="apple">Apples</option>
-            <option value="kale">Kale</option>
-            <option value="strawberry">Strawberries</option>
-            <option value="squash">Squash</option>
-        </select>
+            <fieldset>
+                <legend>Swap my Crops!</legend>
+                <label> I'm looking for:</label>
+                <select name="produce-options" id="produce-location-options">
+                    <option value="-">-</option>
+                    <option value="Carrots" id="zero">Carrots</option>
+                    <option value="Apples" id="one">Apples</option>
+                    <option value="Kale" id="two">Kale</option>
+                    <option value="Strawberries" id="three">Strawberries</option>
+                    <option value="Squash" id="four">Squash</option>
+                </select>
         </fieldset>
-        <img src="images/portland-map.gif">
+        <div id="map-container">
+            <img src="images/portland-map.gif">
+            <img src="images/star.png" id="star1">
+            <img src="images/star.png" id="star2">
+            <img src="images/star.png" id="star3">
+            <img src="images/star.png" id="star4">
+            <img src="images/star.png" id="star5">
+        </div>
         </div>
         <p id="address-paragraph">Address text goes here.</p>
-        <img src="images/star.png" id="star1">
     </body>
     <footer>
         &copy; Crop Swap 2017
