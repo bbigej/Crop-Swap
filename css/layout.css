@@ -62,12 +62,12 @@ body {
 }
 
 /*Header and Footer Section*/
-.profile-header .welcome-header .inventory-header {
-  background-color: white
+/*.profile-header .welcome-header .inventory-header {*/
+  /*background-color: white
   border: none;
   height: 40px;
   position: fixed;
-}
+}*/
 
 /*footer {
   background-color:white

@@ -1,0 +1,24 @@
+body {
+  font-family: "open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px black;
+  }
+
+  ul {
+    font-size: 33px;
+line-height: 140%;
+text-shadow: none;
+font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+font-weight: normal;
+text-transform: capitalize;
+color: white;
+font-style: italic;
+margin-bottom: 45px;
+max-width: 750px;
+margin-left: auto;
+margin-right: auto;
+  }
