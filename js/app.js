@@ -92,9 +92,11 @@ var createAccountForm = function(){
     var newNeighborhood = form.elements["neighborhood"].value;
     var newUserName = form.elements["userName"].value;
     var newUserPassword = form.elements["password"].value;
-    userProfile.push(new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword));
-    localStorage.setItem("userInfo", JSON.stringify(userProfile)); //adds to local storage
+    var currentUser = new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword);
+    userProfile.push(currentUser);
+    localStorage.setItem("currentUserKey", JSON.stringify(currentUser)); //adds to local storage
     document.getElementById("new-user-info").innerHTML = ""; //removes the form from the screen
+    console.log("newFirstName");
   //  var login = document.getElementById("login_user");
     var login = document.login_user;
     login.setAttribute("class", ""); //unhides the user login
@@ -117,7 +119,9 @@ function loginUser() {
       form.appendChild(instructions);
       createAccountForm ();
       } else {
-      window.location = "profile.html"
+      localStorage.setItem("currentUserKey", JSON.stringify(userMatch)); //adds to local storage
+      window.location = "profile.html";
+
     }
 }
 
