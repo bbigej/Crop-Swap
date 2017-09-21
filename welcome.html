@@ -3,6 +3,8 @@
     <head>
       <link rel="stylesheet" type="text/css" href="css/layout.css" />
       <link rel="stylesheet" type="text/css" href="css/welcome.css" />
+      <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed|Lora" rel="stylesheet">
+
 
         <title>Crop Swap</title>
     </head>
@@ -14,29 +16,28 @@
     </header>
     <body>
       <img src="images/welcomeBackground.jpg" class="welcome-photo" />
-      <div id="quote"> "Sharing is Caring"</div>
+      <h1 class = quote> Sharing is Caring</h1>
 
-      <p class = "welcomepage"> We're a community organized group that connects people and their excess food together
-        to share with each other</p>
-      <p class = "welcomepage"> It's simple, all you need to do is </p>
-      <ul id="welcomelist">
-        <li> Create an account below</li>
-        <li> Find the location in your <a href = "inventory.html"> neighborhood </a></li>
-        <li> Add what food you're planning to bring in your <a href = "profile.html">profile</a></li>
-        <li> Then come with your excess food, ready to swap for other peoples food.</li>
-      </ul><br><br>
+      <p class = "welcomepage"> Welcome to Crop Swap. Your kitchen and your neighbor's backyard are  now one in the same.</p>
+      <!-- <p class = "welcomepage"> It's simple, all you need to do is </p> -->
+      <!-- <ul id="welcomelist"> -->
+        <!-- <li> Create an account below</li> -->
+        <!-- <li> Find the location in your <a href = "inventory.html"> neighborhood </a></li> -->
+        <!-- <li> Add what food you're planning to bring in your <a href = "profile.html">profile</a></li> -->
+        <!-- <li> Then come with your excess food, ready to swap for other peoples food.</li> -->
+      <!-- </ul><br><br> -->
 
-    <input id="new-user" type="button" value="Create an account" onclick ="createAccountForm()"/><br>
     <form id="new-user-info" name=new-user-form></form><br>
-
+    <input id="new-user" type="button" value="Join Now!" onclick ="createAccountForm()"/><br>
     <form name="login_user">
+      <input id="existingUser" input type = "button" value = "Login" onclick = "loginUser()"/><br>
       <label> Username:
         <input input type = "text" name= "Username" maxLength="20"/>
       </label><br>
       <label> Password:
         <input input type = "password" name= "Password" maxlength="20"/><br><br>
       </label>
-        <input input type = "button" value = "Submit" onclick = "loginUser()"/>
+        <!-- <input id="existingUser" input type = "button" value = "Login" onclick = "loginUser()"/> -->
     </form>
     <script type= "text/javascript" src = "js/app.js"></script>
     <!-- <footer>

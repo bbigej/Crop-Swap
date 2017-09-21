@@ -11,7 +11,7 @@ var UserProfile = function (firstname, lastname, username, password, neighborhoo
 
 //Array of user objects
 var userProfile = [];
-userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "picture", 0));
+userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "picture", "Carrots"));
 
 //function to create a form that lets a new user add their profile
 var createAccountForm = function(){
@@ -93,9 +93,10 @@ var createAccountForm = function(){
     var newUserName = form.elements["userName"].value;
     var newUserPassword = form.elements["password"].value;
     var currentUser = new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword);
-    userProfile.push(currentUser));
+    userProfile.push(currentUser);
     localStorage.setItem("currentUserKey", JSON.stringify(currentUser)); //adds to local storage
     document.getElementById("new-user-info").innerHTML = ""; //removes the form from the screen
+    console.log("newFirstName");
   //  var login = document.getElementById("login_user");
     var login = document.login_user;
     login.setAttribute("class", ""); //unhides the user login
@@ -119,7 +120,7 @@ function loginUser() {
       createAccountForm ();
       } else {
       localStorage.setItem("currentUserKey", JSON.stringify(userMatch)); //adds to local storage
-      window.location = "profile.html"
+      window.location = "profile.html";
 
     }
 }
