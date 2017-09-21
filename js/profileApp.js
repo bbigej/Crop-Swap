@@ -7,48 +7,12 @@ var signInObject = {
   password: "password",
   neighborhood: "Sellwood",
   img: "picture.png",
-  crops: [0,1,2],
+  crops: [0,1,2,3,4],
 }
 
 //==========Produce Array==========
 var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash"];
 //==========Produce Array==========
-
-function getCropInfo(crop, index) {
-
-  var tableCrop = document.createElement("tr");
-  var tdCrop = document.createElement("td");
-  tdCrop.innerText = crop;
-  tableCrop.appendChild(tdCrop);
-
-  var tdAdd = document.createElement("td");
-  var tdAddBtn = document.createElement("button");
-  tdAddBtn.innerText = "Add Crop";
-  tdAddBtn.setAttribute("type", "button");
-  tdAddBtn.classList.add("addCrop");
-  tdAddBtn.dataset.index = index;
-  tdAdd.appendChild(tdAddBtn);
-  tableCrop.appendChild(tdAdd);
-
-  var tdRemove = document.createElement("td");
-  var tdRemoveBtn = document.createElement("button");
-  tdRemoveBtn.innerText = "Remove Crop";
-  tdRemoveBtn.setAttribute("type", "button");
-  tdRemoveBtn.dataset.index = index;
-  tdRemoveBtn.classList.add("removeCrop");
-  tdRemove.appendChild(tdRemoveBtn);
-  tableCrop.appendChild(tdRemove);
-
-  document.getElementById('user-produce').appendChild(tableCrop);
-
-}
-
-function buildTable() {
-  for (var index = 0; index < produceArray.length; index++) {
-    getCropInfo(produceArray[index], index);
-  }
-}
-buildTable();
 
 function profileContainer() {
   console.log(userProfile.length);
@@ -62,35 +26,65 @@ function profileContainer() {
     var elPicture = document.createElement("img");
     elPicture.src = signInObject.img;
     container.appendChild(elPicture);
-
   }
-
 profileContainer()
 
-// TODO: function for event handler for the add and remove buttons
-//    show and hide remove button
-// function buildList() {
-//   var list = document.getElementById("student-list");
-//   for (index = 0; index < students.length; index++) {
-//     var student = students[index];
-//     var studentItem = document.createElement("li");
-//     studentItem.innerText = student.name;
-//     studentItem.addEventListener("click", showStudentInfo);
-//     studentItem.dataset.index = index;
-//     list.appendChild(studentItem);
-//   }
-// }
-//
-// function showStudentInfo(event) {
-//   var clickedItem = event.target;
-//   var studentIndex = parseInt(clickedItem.dataset.index);
-//   var student = students[studentIndex];
-//   document.getElementById('student-name').innerText = student.name;
-//   if (student.github == "") {
-//     var accountName = prompt("GitHub Account Name: ");
-//     student.github = accountName;
-//   }
-//   var githubURL = "http://www.github.com/"+student.github;
-//   document.getElementById('repo-name').innerText = githubURL;
-//   document.getElementById('repo-name').href = githubURL;
-// }
+function dropCrop(crop, index) {
+  var elDropDown = document.getElementById("drop-produce");
+  var elCropDown = document.createElement("option");
+  elCropDown.innerText = crop;
+  elCropDown.value = index;
+  elDropDown.appendChild(elCropDown);
+}
+
+function handleAdd() {
+  var cropSelected = document.getElementById("drop-produce");
+  var index = parseInt(cropSelected.value);
+  console.log(cropSelected.value);
+  signInObject.crops.push(index);
+  cropSelected.innerHTML = "";
+  document.getElementById('user-produce').innerHTML = "";
+  buildTable();
+}
+var addCropDrop = document.getElementById("addCrop");
+addCropDrop.addEventListener("click", handleAdd);
+
+function handleRemove(event) {
+  var produceIndex = parseInt(event.target.dataset.index);
+  var cropIndex = signInObject.crops.indexOf(produceIndex);
+  signInObject.crops.splice(cropIndex, 1);
+  document.getElementById('user-produce').innerHTML = "";
+  document.getElementById("drop-produce").innerHTML = "";
+  buildTable();
+}
+
+
+function getCropInfo(crop, index) {
+  var tableCrop = document.createElement("tr");
+  var tdCrop = document.createElement("td");
+  tdCrop.innerText = crop;
+  tableCrop.appendChild(tdCrop);
+
+  var tdRemove = document.createElement("td");
+  var tdRemoveBtn = document.createElement("button");
+  tdRemoveBtn.innerText = "Remove Crop";
+  tdRemoveBtn.setAttribute("type", "button");
+  tdRemoveBtn.dataset.index = index;
+  tdRemoveBtn.classList.add("removeCrop");
+  tdRemove.appendChild(tdRemoveBtn);
+  tableCrop.appendChild(tdRemove);
+  document.getElementById('user-produce').appendChild(tableCrop);
+  tdRemoveBtn.addEventListener("click", handleRemove);
+}
+
+
+function buildTable() {
+  for (var index = 0; index < produceArray.length; index++) {
+    if (signInObject.crops.indexOf(index) >= 0) {
+      getCropInfo(produceArray[index], index);
+    } else {
+      dropCrop(produceArray[index], index);
+    }
+  }
+}
+buildTable();
