@@ -133,7 +133,7 @@ main {
     top: 265px;
     height: 15px;
     width:15px;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #star2 {
@@ -142,7 +142,7 @@ main {
     top: 275px;
     height: 15px;
     width:15px;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #star3 {
@@ -151,7 +151,7 @@ main {
     top: 290px;
     height: 15px;
     width:15px;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #star4 {
@@ -160,7 +160,7 @@ main {
     top: 230px;
     height: 15px;
     width:15px;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #star5 {
@@ -169,7 +169,7 @@ main {
     top: 280px;
     height: 15px;
     width:15px;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #map-container {

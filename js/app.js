@@ -6,12 +6,14 @@ var UserProfile = function (firstname, lastname, username, password, neighborhoo
   this.password = password;
   this.neighborhood = neighborhood;
   this.img = picture;
-  this.crops = cropIndexes;
+  this.crops = cropIndexes;  
 }
 
 //Array of user objects
 var userProfile = [];
-userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "picture", "Carrots"));
+userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "", [0, 1]));
+userProfile.push(new UserProfile("Bryan", "Bigej", "A", "B", "Northeast", "", [1, 2]));
+userProfile.push(new UserProfile("John", "Doe", "A", "B", "The Pearl", "", [3, 4, 5]));
 
 //function to create a form that lets a new user add their profile
 var createAccountForm = function(){
