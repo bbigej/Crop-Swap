@@ -1,37 +1,29 @@
-//TODO get user data for local storage
-
-var signInObject = {
-  firstName: "Allyson",
-  lastName: "Ultreras",
-  userName: "username",
-  password: "password",
-  neighborhood: "Sellwood",
-  img: "picture.png",
-  crops: [0,1,2,3,4],
-}
 
 //==========Produce Array==========
 var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash"];
 //==========Produce Array==========
+var currentUser = null;
 
-
-
+//function to create a container that hosts the Signed In user First Name, Last Name and Picture
 function profileContainer() {
-  console.log(userProfile.length);
-  var container = document.getElementById("profile-container");
-    var userFirstName = document.createElement("p");
-    userFirstName.innerText = signInObject.firstName + " " + signInObject.lastName;
-    container.appendChild(userFirstName);
-    var elUserName = document.createElement("p");
-    elUserName.innerText = signInObject.userName;
-    container.appendChild(elUserName);
-    var elPicture = document.createElement("img");
-    elPicture.src = signInObject.img;
-    container.appendChild(elPicture);
+    currentUser = JSON.parse(localStorage.getItem("currentUserKey"));
+    if (currentUser != null) {
+      var container = document.getElementById("profile-container");
+      var elFirstLastName = document.createElement("p"); //create the First and Last name elements
+      elFirstLastName.innerText = currentUser.firstName + " " + currentUser.lastName;  // tell it what Name and Last name to show
+      container.appendChild(elFirstLastName);  //append the Name and Last name to the container
+      var elUserName = document.createElement("p"); //create the Username element
+      elUserName.innerText = currentUser.userName; //tell it what to write inside
+      container.appendChild(elUserName); //append the username to the container
+      var elPicture = document.createElement("img"); //create the image element
+      elPicture.src = currentUser.img; // tell it what to write inside
+      container.appendChild(elPicture); // append the picture to the container
+    }
   }
 profileContainer()
 
-function dropCrop(crop, index) {
+//function to create the dropdown menu with produce options
+function dropCrop (crop, index) {
   var elDropDown = document.getElementById("drop-produce");
   var elCropDown = document.createElement("option");
   elCropDown.innerText = crop;
@@ -43,21 +35,24 @@ function handleAdd() {
   var cropSelected = document.getElementById("drop-produce");
   var index = parseInt(cropSelected.value);
   console.log(cropSelected.value);
-  signInObject.crops.push(index);
+  currentUser.crops.push(index);
   cropSelected.innerHTML = "";
   document.getElementById('user-produce').innerHTML = "";
   buildTable();
+  localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
 }
 var addCropDrop = document.getElementById("addCrop");
 addCropDrop.addEventListener("click", handleAdd);
 
 function handleRemove(event) {
   var produceIndex = parseInt(event.target.dataset.index);
-  var cropIndex = signInObject.crops.indexOf(produceIndex);
-  signInObject.crops.splice(cropIndex, 1);
+  var cropIndex = currentUser.crops.indexOf(produceIndex);
+  console.log(currentUser);
+  currentUser.crops.splice(cropIndex, 1);
   document.getElementById('user-produce').innerHTML = "";
   document.getElementById("drop-produce").innerHTML = "";
   buildTable();
+  localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
 }
 
 
@@ -79,14 +74,17 @@ function getCropInfo(crop, index) {
   tdRemoveBtn.addEventListener("click", handleRemove);
 }
 
-
 function buildTable() {
-  for (var index = 0; index < produceArray.length; index++) {
-    if (signInObject.crops.indexOf(index) >= 0) {
-      getCropInfo(produceArray[index], index);
-    } else {
-      dropCrop(produceArray[index], index);
+  if (currentUser != null) {
+    for (var index = 0; index < produceArray.length; index++) {
+      if (currentUser.crops.indexOf(index) >= 0) {
+        getCropInfo(produceArray[index], index);
+      } else {
+        dropCrop(produceArray[index], index);
+      }
     }
+  } else {
+    location.assign("welcome.html");
   }
 }
 buildTable();
