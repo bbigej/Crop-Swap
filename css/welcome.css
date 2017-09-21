@@ -1,0 +1,49 @@
+.quote {
+  font-family: "open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  /*font-family: 'Encode Sans Semi Condensed', sans-serif;*/
+  text-transform: uppercase;
+  line-height: 105%;
+  letter-spacing: 3px;
+  font-weight: 100;
+  text-align: center;
+  color: white;
+  font-size: 185px;
+  text-shadow: 5px 5px black;
+  margin-bottom: 0px;
+
+}
+
+.welcomepage {
+    font-size: 33px;
+    line-height: 140%;
+    text-shadow: none;
+    font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-weight: normal;
+    /*text-transform: capitalize;*/
+    color: white;
+    font-style: italic;
+    margin-bottom: 45px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px black;
+}
+
+#new-user, #existingUser {
+  box-shadow: none;
+  background: none;
+  border: 2px solid black;
+  border-radius:3px;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px black;
+  text-align: center;
+}
+
+#new-user {
+  margin: 0 auto;
+}
+
+#login_user {
+  margin: 0 auto;
+}
