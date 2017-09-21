@@ -26,12 +26,19 @@ function updatePage() {
 
 //code that adds stars to the map and updates the text on the page
 function showLocations() {
-    if (produceLocationOptions.value == userProfile[0].crops)
-    /*if (userProfile[0].crops == produceArray.indexOf("Carrots")) */ {
+    if (produceLocationOptions.value == userProfile[0].crops) {
         document.getElementById("star1").style.visibility = 'visible';
         message = "Address: 123 Marshall St.";
         updatePage();
-    } else {
+    }
+    
+    
+    
+    
+    
+    
+    
+    else {
         document.getElementById("star1").style.visibility = 'hidden';
         message = "No options available.";
         updatePage();
@@ -47,5 +54,3 @@ function addListeners() {
 }
 
 window.addEventListener("load", addListeners);
-
-/* add 4 more stars */
