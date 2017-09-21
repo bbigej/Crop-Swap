@@ -14,6 +14,8 @@ var signInObject = {
 var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash"];
 //==========Produce Array==========
 
+
+
 function profileContainer() {
   console.log(userProfile.length);
   var container = document.getElementById("profile-container");
