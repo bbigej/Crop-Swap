@@ -10,6 +10,8 @@ function profileContainer() {
     if (currentUser != null) {
       var container = document.getElementById("profile-container");
       var elFirstLastName = document.createElement("p"); //create the First and Last name elements
+      elFirstLastName.setAttribute("contenteditable", true);
+      //=====================
       elFirstLastName.innerText = currentUser.firstName + " " + currentUser.lastName;  // tell it what Name and Last name to show
       container.appendChild(elFirstLastName);  //append the Name and Last name to the container
       var elUserName = document.createElement("p"); //create the Username element
