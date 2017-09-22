@@ -82,11 +82,11 @@ main {
   padding-left: 100px;
 }
 
-#profile-container img {
+/*#profile-container img {
   width: 200px;
   height: 200px;
   background-color: blue;
-}
+}*/
 
 .inventory-list {
   padding-left: 100px;
@@ -110,8 +110,15 @@ main {
   padding-left: 20px;
 }
 
-.profile-container img {
-  width: 200px;
+#profile-container img {
+  width: 120px;
+  height: 150px;
+  object-fit: contain; /* this only works on the image itself*/
+  object-position: top center;
+}
+
+#profile-container span {
+  margin-right: 5px;
 }
 
 .produce-table {
