@@ -1,9 +1,8 @@
-#login-user {
-  }
-
-#new-user {
-  display: block;
-
+.logo {
+  width:200px;
+  position: absolute;
+  top: 0px;
+  left: 50px;
 }
 
 .hide {
@@ -11,22 +10,19 @@
 }
 
 header ul {
-    height: 40px;
+    height: 90px;
     text-align: right;
-    margin-right: 40px;
+    margin-right: 60px;
 }
 
 header li {
     display: inline-block;
-    font-family: arial;
+    font-family: "Lora","open sans","HelveticaNeue-Light"
     text-shadow: 2px;
     font-size: 20px;
     margin: 10px;
     padding: 4px;
 
-}
-#welcomelist {
-  display: block;
 }
 
 .swap {
@@ -48,10 +44,11 @@ header li {
 /*Background Images*/
 
 .welcome-photo, .profile-photo, .inventory-photo {
-  opacity: 0.5;
+  opacity: .35;
   min-width: 100vw;
   min-height:100vh;
-  position: absolute;
+  position: fixed;
+  top:130px;
   z-index: -1;
 }
 
