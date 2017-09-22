@@ -14,6 +14,7 @@ var userProfile = [];
 userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "", [0, 1]));
 userProfile.push(new UserProfile("Bryan", "Bigej", "A", "B", "Northeast", "", [1, 2]));
 userProfile.push(new UserProfile("John", "Doe", "A", "B", "The Pearl", "", [3, 4, 5]));
+localStorage.setItem("user-profiles", JSON.stringify(userProfile));
 
 //function to create a form that lets a new user add their profile
 var createAccountForm = function(){
