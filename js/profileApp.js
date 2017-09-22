@@ -7,13 +7,25 @@ var currentUser = null;
 //function to create a container that hosts the Signed In user First Name, Last Name and Picture
 function profileContainer() {
     currentUser = JSON.parse(localStorage.getItem("currentUserKey"));
+    console.log(currentUser);
     if (currentUser != null) {
       var container = document.getElementById("profile-container");
       var elFirstLastName = document.createElement("p"); //create the First and Last name elements
-      elFirstLastName.innerText = currentUser.firstName + " " + currentUser.lastName;  // tell it what Name and Last name to show
+      var elFirstName = document.createElement("span");
+      elFirstName.setAttribute("contenteditable", true);
+      elFirstName.innerText = currentUser.firstName;
+      elFirstName.addEventListener("input", handleFirstName);
+      elFirstLastName.appendChild(elFirstName);
+      var elLastName = document.createElement("span");
+      elLastName.setAttribute("contenteditable", true);
+      elLastName.innerText = currentUser.lastName;
+      elLastName.addEventListener("input", handleLastName);
+      elFirstLastName.appendChild(elLastName);
       container.appendChild(elFirstLastName);  //append the Name and Last name to the container
       var elUserName = document.createElement("p"); //create the Username element
+      elUserName.setAttribute("contenteditable", true);
       elUserName.innerText = currentUser.userName; //tell it what to write inside
+      elUserName.addEventListener("input", handleUserName);
       container.appendChild(elUserName); //append the username to the container
       var elPicture = document.createElement("img"); //create the image element
       elPicture.src = currentUser.img; // tell it what to write inside
@@ -21,6 +33,22 @@ function profileContainer() {
     }
   }
 profileContainer()
+
+function handleFirstName (event) {
+  console.log(event.target.innerText); //this target the p element
+  currentUser.firstName = event.target.innerText;
+  localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
+}
+
+function handleLastName (event) {
+  currentUser.lastName = event.target.innerText;
+  localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
+}
+
+function handleUserName (event) {
+  currentUser.userName = event.target.innerText;
+  localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
+}
 
 //function to create the dropdown menu with produce options
 function dropCrop (crop, index) {
