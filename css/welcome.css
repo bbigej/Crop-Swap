@@ -9,7 +9,7 @@
   color: #78AB46;
   font-size: 185px;
   text-shadow: 5px 5px #031D44;
-  margin-bottom: 0px;
+  margin: 150px 25px 0px 25px;
 
 }
 .welcome-header {
@@ -22,19 +22,18 @@
 }
 
 .welcomepage {
-    font-size: 33px;
+    font-size: 38px;
     line-height: 140%;
     text-shadow: none;
+    text-align: center;
     font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     font-weight: normal;
     /*text-transform: capitalize;*/
     color: #564E58;
     font-style: italic;
-    margin-bottom: 45px;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    margin: 45px auto 0px auto;
+    width: 750px;
+    }
 
 #new-user, #existingUser {
   box-shadow: none;
@@ -43,7 +42,7 @@
   border-radius:3px;
   font-size: 20px;
   text-align: center;
-  font-family: "Lora","open sans","HelveticaNeue-Light";
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 /*div that contains all login/button forms*/
 .white-box {
@@ -53,9 +52,23 @@
   padding:50px 50px 200px 50px;
 }
 
+.what_to_do{
+  display:flex;
+  justify-content: space-around;
+  background-color: #78AB46;
+  padding:50px 50px 100px 50px;
+  margin-top: 200px;
+}
+
+
 #welcomelist {
-  font-family: "Lora","open sans","HelveticaNeue-Light";
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-size: 20px;
+  color: #564E58;
+  font-weight: normal;
+  list-style-type: none;
+  margin-right: 200px;
+
 }
 
 
@@ -63,7 +76,6 @@
 #login-user {
   border: 2px solid black;
   padding:20px;
-  margin-left: 500px;
   background-color: #EDA15A;
   font-family: "Lora","open sans","HelveticaNeue-Light";
 }
@@ -71,7 +83,6 @@
 /*the button that triggers the new user form below*/
 #new-user {
   padding: 75px;
-  margin-left: 200px;
   background-color: #EDA15A;
   border-style: groove;
   font-family: "Lora","open sans","HelveticaNeue-Light";
