@@ -1,0 +1,41 @@
+.profile-main {
+  display: flex;
+  font-family: "Lora","open sans","HelveticaNeue-Light";
+  color: #564E58;
+  padding: 20px;
+}
+
+.profile-main h1 {
+  font-size: 38px;
+}
+
+.profile-main h3 {
+  font-size: 22px;
+  padding-top: 30px;
+  color: #18AB46;
+}
+
+#profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#profile-container img {
+  width: 320px;
+  height: 210px;
+  object-fit: contain; /* this only works on the image itself*/
+  object-position: top center;
+}
+
+#drop-options {
+
+}
+
+#profile-container span {
+  margin-right: 5px;
+}
+
+#user-produce {
+  font-size: 20px;
+}
