@@ -66,7 +66,7 @@ function showLocations() {
     }
     for (var index = 0; index < foundNeighborhoods.length; index++) {
         document.getElementById(foundNeighborhoods[index].starId).style.visibility = 'visible';
-        message += foundNeighborhoods[index].neighborhood + ": <br><br>";
+        message += foundNeighborhoods[index].neighborhood + ": <br>";
         message += foundNeighborhoods[index].address;
     }
     updatePage(message);

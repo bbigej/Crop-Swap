@@ -1,3 +1,7 @@
+body {
+    font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
 .swap {
     height: 300px;
     width: 400px;
@@ -16,26 +20,24 @@
 
 #inv-intro {
     color: #032559;
-    font-size: 38px;
-    font-style: italic;
-    font-weight: bold;
-    text-shadow: 0.5px 0.5px white;
+    font-size: 45px;
+    text-align: center;
 }
 
 #address-paragraph {
-    color: #032559;
+    min-width: 230px;
+    color: #564e58;
     font-size: 24px;
-    font-style: italic;
     font-weight: bold;
-    text-shadow: 0.5px 0.5px white;
+    margin-top: 32px;
 }
 
 #fieldset {
-    color: #032559;
+    color: #564e58;
     font-size: 24px;
-    font-style: italic;
     font-weight: bold;
     height: 150px;
-    text-shadow: 0.5px 0.5px white;
     border: none;
+    margin-left: 35px;
+    margin-right: 10px;
 }
