@@ -1,6 +1,6 @@
 
 //==========Produce Array==========
-var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash"];
+var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash", "Lettuce", "Cucumbers", "Tomatoes"];
 //==========Produce Array==========
 var currentUser = null;
 

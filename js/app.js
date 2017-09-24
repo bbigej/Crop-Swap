@@ -12,13 +12,13 @@ var UserProfile = function (firstname, lastname, username, password, neighborhoo
 //Array of user objects
 var userProfile = [];
 userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "NorthEast", "images/oneeyedbunny.jpg", [0,1,4,6,7,8]));
-userProfile.push(new UserProfile("Tanya", "Griego", "T", "B", "Sellwood", "images/racoon.jpg", [1,2,4, 5, 6]));
+userProfile.push(new UserProfile("Tanya", "Griego", "T", "B", "Sellwood", "images/racoon.jpg", [1,2,4,5,6]));
 userProfile.push(new UserProfile("Sandra", "Ultreras", "S", "U", "The Pearl", "images/ape.jpg", [0,3,8]));
 userProfile.push(new UserProfile("Brian", "Bigej", "B", "B", "PSU", "images/yak.jpg", [0,2,3,4,7]));
 localStorage.setItem("user-profiles", JSON.stringify(userProfile));
 
 //function to create a form that lets a new user add their profile
-var createAccountForm = function(){
+var createAccountForm = function(instructions){
     // var input = document.getElementById("new-user");
     // input.parentElement.removeChild(input); //removes the create an account button from the screen
     // //var login = document.getElementById("login_user");
@@ -29,7 +29,11 @@ var createAccountForm = function(){
     container.innerHTML="";
     var form= document.createElement("form")
     form.setAttribute("id", "new-user-info");
+    form.setAttribute("name", "new-user-form");
     container.appendChild(form);
+    if (instructions) {
+      form.appendChild(instructions)
+    }
 
     var space = document.createElement("br");  //create a break in HTML
     var fieldset = document.createElement("fieldset");
@@ -97,15 +101,14 @@ var createAccountForm = function(){
     var newNeighborhood = form.elements["neighborhood"].value;
     var newUserName = form.elements["userName"].value;
     var newUserPassword = form.elements["password"].value;
-    var currentUser = new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword);
+    var currentUser = new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword,"",[]);
     userProfile.push(currentUser);
     localStorage.setItem("currentUserKey", JSON.stringify(currentUser)); //adds to local storage
     document.getElementById("new-user-info").innerHTML = ""; //removes the form from the screen
-    console.log("newFirstName");
+    //console.log("newFirstName");
   //  var login = document.getElementById("login_user");
     var login = document.login_user;
-    login.setAttribute("class", ""); //unhides the user login
-    //document.write = "Thank you for creating an account";
+  //  login.setAttribute("class", ""); //unhides the user login
     window.location = "profile.html"
   }
 
@@ -118,11 +121,9 @@ function loginUser() {
       return((profile.userName == userNameInput) && (profile.password == passwordInput))
     });
     if(!userMatch) {
-      var form = document.getElementById("new-user-info"); //creates the html from grouping
       var instructions = document.createElement("p");
       instructions.innerText = "No account found. Please create an account below.";
-      form.appendChild(instructions);
-      createAccountForm ();
+      createAccountForm (instructions);
       } else {
       localStorage.setItem("currentUserKey", JSON.stringify(userMatch)); //adds to local storage
       window.location = "profile.html";
