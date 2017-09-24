@@ -1,7 +1,4 @@
 
-//==========Produce Array==========
-var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash"];
-//==========Produce Array==========
 var currentUser = null;
 
 //function to create a container that hosts the Signed In user First Name, Last Name and Picture
@@ -36,30 +33,34 @@ function profileContainer() {
       elFirstLastName.appendChild(elFirstName);
 
       var elLastName = document.createElement("span");
-      elLastName.innerText = "Last Name: ";
       elLastName.setAttribute("contenteditable", true);
       elLastName.innerText = currentUser.lastName;
       elLastName.addEventListener("input", handleLastName);
       elFirstLastName.appendChild(elLastName);
       container.appendChild(elFirstLastName);  //append the Name and Last name to the container
 
+
       var elUserName = document.createElement("p"); //create the Username element
-      userNameLabel = document.createElement("label")
-      userNameLabel.innerText = "Username: ";
-      container.appendChild(userNameLabel);
-      elUserName.setAttribute("contenteditable", true);
-      elUserName.innerText = currentUser.userName; //tell it what to write inside
-      elUserName.addEventListener("input", handleUserName);
       container.appendChild(elUserName); //append the username to the container
+      userNameLabel = document.createElement("label")
+      elUserName.appendChild(userNameLabel);
+      userNameLabel.innerText = "Username: ";
+      var elUserNameSpan = document.createElement("span");
+      elUserName.appendChild(elUserNameSpan);
+      elUserNameSpan.setAttribute("contenteditable", true);
+      elUserNameSpan.innerText = currentUser.userName; //tell it what to write inside
+      elUserNameSpan.addEventListener("input", handleUserName);
 
       var elNeighborhood = document.createElement("p"); //create the Username element
-      userNaighborhood = document.createElement("label")
-      userNaighborhood.innerText = "Neighborhood: ";
-      container.appendChild(userNaighborhood);
-      elNeighborhood.setAttribute("contenteditable", true);
-      elNeighborhood.innerText = currentUser.neighborhood; //tell it what to write inside
-      elNeighborhood.addEventListener("input", handleNeighborhood);
       container.appendChild(elNeighborhood); //append the username to the container
+      userNaighborhood = document.createElement("label")
+      elNeighborhood.appendChild(userNaighborhood);
+      userNaighborhood.innerText = "Neighborhood: ";
+      var elNeighborhoodSpan = document.createElement("span");
+      elNeighborhood.appendChild(elNeighborhoodSpan);
+      elNeighborhoodSpan.setAttribute("contenteditable", true);
+      elNeighborhoodSpan.innerText = currentUser.neighborhood; //tell it what to write inside
+      elNeighborhoodSpan.addEventListener("input", handleNeighborhood);
 
     }
   }
