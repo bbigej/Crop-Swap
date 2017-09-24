@@ -12,14 +12,17 @@
   margin-bottom: 0px;
 
 }
-.welcome-header {
+
+}
+/*.welcome-header {
   position: fixed;
   height: 130px;
   top: 0px;
   width: 100%;
   background-color: rgba(255,255,255,0.90);
 
-}
+}*/
+
 
 .welcomepage {
     font-size: 33px;
