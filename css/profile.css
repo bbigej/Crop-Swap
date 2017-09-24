@@ -1,13 +1,17 @@
 .profile-main {
   display: flex;
   font-family: "Lora","open sans","HelveticaNeue-Light";
-  color: #564E58;
+  color: #032559;
   padding: 20px;
   margin-top: 175px;
 }
 
 .profile-main h1 {
   font-size: 45px;
+<<<<<<< HEAD
+=======
+  text-shadow: .5px .5px white;
+>>>>>>> 747d19d95375b326ee6a84dc18f08ae7cd0bce62
 }
 
 .profile-main h3 {
@@ -23,6 +27,10 @@
   margin-left: 50px;
   border: 2px solid #032559;
   background-color: #EBA15A;
+<<<<<<< HEAD
+=======
+  opacity: .75;
+>>>>>>> 747d19d95375b326ee6a84dc18f08ae7cd0bce62
 }
 
 #profile-container img {
@@ -40,6 +48,21 @@
 
 #user-produce {
   font-size: 20px;
+  }
+
+#produce-table {
+  margin-left: 175px;
+}
+#drop-produce {
+  font-size: 15px;
+}
+
+#produce-table {
+  margin-left: 175px;
+}
+
+#drop-produce {
+  font-size: 15px;
 }
 
 #produce-table {
