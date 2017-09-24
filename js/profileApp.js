@@ -10,26 +10,56 @@ function profileContainer() {
     console.log(currentUser);
     if (currentUser != null) {
       var container = document.getElementById("profile-container");
+
       var elFirstLastName = document.createElement("p"); //create the First and Last name elements
+      nameLabel = document.createElement("label")
+      nameLabel.innerText = "Name:";
+      container.appendChild(nameLabel);
+
       var elFirstName = document.createElement("span");
       elFirstName.setAttribute("contenteditable", true);
       elFirstName.innerText = currentUser.firstName;
       elFirstName.addEventListener("input", handleFirstName);
       elFirstLastName.appendChild(elFirstName);
+
       var elLastName = document.createElement("span");
+      elLastName.innerText = "Last Name: ";
       elLastName.setAttribute("contenteditable", true);
       elLastName.innerText = currentUser.lastName;
       elLastName.addEventListener("input", handleLastName);
       elFirstLastName.appendChild(elLastName);
       container.appendChild(elFirstLastName);  //append the Name and Last name to the container
+
       var elUserName = document.createElement("p"); //create the Username element
+      userNameLabel = document.createElement("label")
+      userNameLabel.innerText = "Username: ";
+      container.appendChild(userNameLabel);
       elUserName.setAttribute("contenteditable", true);
       elUserName.innerText = currentUser.userName; //tell it what to write inside
       elUserName.addEventListener("input", handleUserName);
       container.appendChild(elUserName); //append the username to the container
+
+      var elNeighborhood = document.createElement("p"); //create the Username element
+      userNaighborhood = document.createElement("label")
+      userNaighborhood.innerText = "Neighborhood: ";
+      container.appendChild(userNaighborhood);
+      elNeighborhood.setAttribute("contenteditable", true);
+      elNeighborhood.innerText = currentUser.neighborhood; //tell it what to write inside
+      elNeighborhood.addEventListener("input", handleNeighborhood);
+      container.appendChild(elNeighborhood); //append the username to the container
+
       var elPicture = document.createElement("img"); //create the image element
+      elPicture.id = "user-picture"
       elPicture.src = currentUser.img; // tell it what to write inside
       container.appendChild(elPicture); // append the picture to the container
+      var elUserPicture = document.createElement("p")
+      elUserPicture.innerText = "Update your picture: ";
+      container.appendChild(elUserPicture);
+      var elUpdatePicture = document.createElement("input");
+      elUpdatePicture.setAttribute("type", "file");
+      elUpdatePicture.setAttribute("accept", ".jpg, .jpeg, .png");
+      container.appendChild(elUpdatePicture);
+      elUpdatePicture.addEventListener("change", handlePicture);
     }
   }
 profileContainer()
@@ -50,6 +80,28 @@ function handleUserName (event) {
   localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
 }
 
+function handleNeighborhood (event) {
+  currentUser.neighborhood = event.target.innerText;
+  localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
+}
+
+function handlePicture (event) {
+    if (event.target.files.length > 0) {
+      var file = event.target.files[0];
+      console.log(file);
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.addEventListener("load", function() {
+        var base64image = reader.result;
+        console.log(base64image);
+        document.getElementById("user-picture").src = base64image;
+        currentUser.img = base64image;
+        localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
+      })
+    }
+}
+
+
 //function to create the dropdown menu with produce options
 function dropCrop (crop, index) {
   var elDropDown = document.getElementById("drop-produce");
@@ -59,6 +111,7 @@ function dropCrop (crop, index) {
   elDropDown.appendChild(elCropDown);
 }
 
+//function to
 function handleAdd() {
   var cropSelected = document.getElementById("drop-produce");
   var index = parseInt(cropSelected.value);
