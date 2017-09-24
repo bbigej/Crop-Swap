@@ -22,7 +22,14 @@ header li {
     font-size: 20px;
     margin: 10px;
     padding: 4px;
+}
 
+header li:hover {
+  opacity: 1;
+  transition: all 0.25s;
+  background-color: #EBA15A;
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color: #564E58;
 }
 
 .swap {
