@@ -2,27 +2,34 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/layout.css" />
+        <link rel="stylesheet" type="text/css" href="css/welcome.css" />
+        <link rel="stylesheet" type="text/css" href="css/profile.css" />
+
+        <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed|Lora" rel="stylesheet">
         <title>My Profile - Crop Swap</title>
     </head>
-        <header class = "profile-header">
+        <header class = "header">
             <ul>
+              <img src="images/CropSwap_v1.png" class="logo"/>
               <a href="welcome.html"><li>Home</li></a>
               <a href="inventory.html"><li>Produce</li></a>
             </ul>
         </header>
     <body>
       <img src="images/profileBackground.jpg" class="profile-photo" />
-        <main>
+        <main class="profile-main">
           <section id="profile-container">
           </section>
-          <div class="produce-table">
-            <h1>Here you can ADD or REMOVE crop items to swap</h1>
-          <div class="">
+          <div id="produce-table">
+            <h1>What's in your backyard?</h1>
+          <div id="drop-options">
+            <h3>Select what produce you're bringing to your neighborhood</h3>
             <select id="drop-produce">
-              <option value="">Select a Crop</option>
+              <option value="">Select an item</option>
             </select>
-            <button id="addCrop" type="button">Add Crop</button>
+            <button id="addCrop" type="button">Add Produce</button>
           </div>
+            <h3>Here is the list of produce you're swaping:</h3>
             <table id="user-produce">
             </table>
           </div>

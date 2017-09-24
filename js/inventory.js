@@ -1,6 +1,6 @@
 
 //this array contains the produce options
-var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash"];
+var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash", "Lettuce", "Cucumbers", "Tomatoes"];
 
 //array of locations of markets
 var locationsArray =[];
@@ -47,7 +47,7 @@ function findNeighborhoodsForUsers(users) {
         var user = users[index];
         var location = locationsArray.find(function(location) {
             return (user.neighborhood == location.neighborhood);
-        }); 
+        });
          if (location) {
             foundNeighborhoods.push(location);
          }
@@ -60,12 +60,13 @@ function showLocations() {
     var cropIndex = produceArray.indexOf(produceLocationOptions.value);
     var usersWithCrop = findUserWithCrop(cropIndex);
     var foundNeighborhoods = findNeighborhoodsForUsers(usersWithCrop);
-    var message = "Addresses:<br><br>";
+    var message = "";
     for (var index = 0; index < locationsArray.length; index++) {
         document.getElementById(locationsArray[index].starId).style.visibility = 'hidden';
     }
     for (var index = 0; index < foundNeighborhoods.length; index++) {
         document.getElementById(foundNeighborhoods[index].starId).style.visibility = 'visible';
+        message += foundNeighborhoods[index].neighborhood + ": <br>";
         message += foundNeighborhoods[index].address;
     }
     updatePage(message);

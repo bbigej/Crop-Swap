@@ -4,6 +4,14 @@
   top: 0px;
   left: 50px;
 }
+.header {
+  position: fixed;
+  height: 130px;
+  top: 0px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.90);
+  z-index: 1;
+}
 
 .hide {
   display:none;
@@ -17,7 +25,7 @@ header ul {
 
 header li {
     display: inline-block;
-    font-family: "Lora","open sans","HelveticaNeue-Light"
+    font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     text-shadow: 2px;
     font-size: 20px;
     margin: 10px;
@@ -109,30 +117,6 @@ main {
   padding: 20px;
 }
 
-.profile-container {
-  padding-left: 20px;
-}
-
-#profile-container img {
-  width: 120px;
-  height: 150px;
-  object-fit: contain; /* this only works on the image itself*/
-  object-position: top center;
-}
-
-#profile-container span {
-  margin-right: 5px;
-}
-
-.produce-table {
-  padding-left: 100px;
-}
-
-.user-produce {
-  border: 1px solid black;
-  padding: 5px;
-  border-spacing: 5px;
-}
 
 #star1 {
     position: absolute;
@@ -181,4 +165,6 @@ main {
 
 #map-container {
     position: relative;
+    border: solid #032559 1px;
+    margin-right: 10px;
 }
