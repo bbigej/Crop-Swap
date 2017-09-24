@@ -11,10 +11,23 @@ function profileContainer() {
     if (currentUser != null) {
       var container = document.getElementById("profile-container");
 
+      var elPicture = document.createElement("img"); //create the image element
+      elPicture.id = "user-picture"
+      elPicture.src = currentUser.img; // tell it what to write inside
+      container.appendChild(elPicture); // append the picture to the container
+      var elUserPicture = document.createElement("p")
+      elUserPicture.innerText = "Update your picture: ";
+      container.appendChild(elUserPicture);
+      var elUpdatePicture = document.createElement("input");
+      elUpdatePicture.setAttribute("type", "file");
+      elUpdatePicture.setAttribute("accept", ".jpg, .jpeg, .png");
+      container.appendChild(elUpdatePicture);
+      elUpdatePicture.addEventListener("change", handlePicture);
+
       var elFirstLastName = document.createElement("p"); //create the First and Last name elements
       nameLabel = document.createElement("label")
-      nameLabel.innerText = "Name:";
-      container.appendChild(nameLabel);
+      nameLabel.innerText = "Name: ";
+      elFirstLastName.appendChild(nameLabel);
 
       var elFirstName = document.createElement("span");
       elFirstName.setAttribute("contenteditable", true);
@@ -48,21 +61,25 @@ function profileContainer() {
       elNeighborhood.addEventListener("input", handleNeighborhood);
       container.appendChild(elNeighborhood); //append the username to the container
 
-      var elPicture = document.createElement("img"); //create the image element
-      elPicture.id = "user-picture"
-      elPicture.src = currentUser.img; // tell it what to write inside
-      container.appendChild(elPicture); // append the picture to the container
-      var elUserPicture = document.createElement("p")
-      elUserPicture.innerText = "Update your picture: ";
-      container.appendChild(elUserPicture);
-      var elUpdatePicture = document.createElement("input");
-      elUpdatePicture.setAttribute("type", "file");
-      elUpdatePicture.setAttribute("accept", ".jpg, .jpeg, .png");
-      container.appendChild(elUpdatePicture);
-      elUpdatePicture.addEventListener("change", handlePicture);
     }
   }
 profileContainer()
+
+function handlePicture (event) {
+    if (event.target.files.length > 0) {
+      var file = event.target.files[0];
+      console.log(file);
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.addEventListener("load", function() {
+        var base64image = reader.result;
+        console.log(base64image);
+        document.getElementById("user-picture").src = base64image;
+        currentUser.img = base64image;
+        localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
+      })
+    }
+}
 
 function handleFirstName (event) {
   console.log(event.target.innerText); //this target the p element
@@ -85,21 +102,6 @@ function handleNeighborhood (event) {
   localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
 }
 
-function handlePicture (event) {
-    if (event.target.files.length > 0) {
-      var file = event.target.files[0];
-      console.log(file);
-      var reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.addEventListener("load", function() {
-        var base64image = reader.result;
-        console.log(base64image);
-        document.getElementById("user-picture").src = base64image;
-        currentUser.img = base64image;
-        localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
-      })
-    }
-}
 
 
 //function to create the dropdown menu with produce options
