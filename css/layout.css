@@ -165,4 +165,6 @@ main {
 
 #map-container {
     position: relative;
+    border: solid #032559 1px;
+    margin-right: 10px;
 }
