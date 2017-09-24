@@ -60,12 +60,13 @@ function showLocations() {
     var cropIndex = produceArray.indexOf(produceLocationOptions.value);
     var usersWithCrop = findUserWithCrop(cropIndex);
     var foundNeighborhoods = findNeighborhoodsForUsers(usersWithCrop);
-    var message = "Addresses:<br><br>";
+    var message = "";
     for (var index = 0; index < locationsArray.length; index++) {
         document.getElementById(locationsArray[index].starId).style.visibility = 'hidden';
     }
     for (var index = 0; index < foundNeighborhoods.length; index++) {
         document.getElementById(foundNeighborhoods[index].starId).style.visibility = 'visible';
+        message += foundNeighborhoods[index].neighborhood + ": <br><br>";
         message += foundNeighborhoods[index].address;
     }
     updatePage(message);
