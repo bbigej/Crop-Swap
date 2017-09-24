@@ -13,23 +13,23 @@ var MarketLocation = function (neighborhood, address, starId) {
 }
 
 //locations pushed into the array
-locationsArray.push(new MarketLocation("The Pearl", "123 Marshall St.", "star1"));
-locationsArray.push(new MarketLocation("PSU", "1825 SW Broadway", "star2"));
-locationsArray.push(new MarketLocation("Sellwood", "789 SE Tacoma St.", "star3"));
-locationsArray.push(new MarketLocation("Northeast", "2035 NE Alberta St", "star4"));
-locationsArray.push(new MarketLocation("Southeast","3203 SE Woodstock Blvd", "star5",));
+locationsArray.push(new MarketLocation("The Pearl", "123 Marshall St. <br><br>", "star1"));
+locationsArray.push(new MarketLocation("PSU", "1825 SW Broadway <br><br>", "star2"));
+locationsArray.push(new MarketLocation("Sellwood", "789 SE Tacoma St. <br><br>", "star3"));
+locationsArray.push(new MarketLocation("Northeast", "2035 NE Alberta St <br><br>", "star4"));
+locationsArray.push(new MarketLocation("Southeast","3203 SE Woodstock Blvd <br><br>", "star5",));
 
 
 //code to add text to the paragraph
-var message = "blank";
-
-function updatePage() {
+function updatePage(message) {
     document.getElementById("address-paragraph").innerHTML = message;
 }
 
+var peopleWithCropsArray = null;
+
 //code that adds stars to the map and updates the text on the page
 function findUserWithCrop(crop) {
-    var peopleWithCropsArray = [];
+    peopleWithCropsArray = [];
     for (var index = 0; index < userProfiles.length; index++) {
         var user = userProfiles[index];
         if (user.crops.includes(crop)) {
@@ -39,11 +39,13 @@ function findUserWithCrop(crop) {
     return peopleWithCropsArray;
 }
 
+
+
 function findNeighborhoodsForUsers(users) {
     var foundNeighborhoods = [];
     for (var index = 0; index < users.length; index++) {
         var user = users[index];
-        var location = locationsArray.find(function(location){
+        var location = locationsArray.find(function(location) {
             return (user.neighborhood == location.neighborhood);
         }); 
          if (location) {
@@ -54,46 +56,20 @@ function findNeighborhoodsForUsers(users) {
 }
 
 function showLocations() {
-    findUserWithCrop(produceLocationOptions.value)
-    findNeighborhoodsForUsers(peopleWithCropsArray);
-    for (var index = 0; index < foundNeighborhoods.length; index++) {
-        if (asdf) {
-            document.getElementById("star1").style.visibility = 'visible';
-            message += MarketLocation.address
-            updatePage();
-        } else {
-            document.getElementById("star1").style.visibility = 'hidden';
-            message = "No options available.";
-            updatePage();
+
+    var cropIndex = produceArray.indexOf(produceLocationOptions.value);
+    var usersWithCrop = findUserWithCrop(cropIndex);
+    var foundNeighborhoods = findNeighborhoodsForUsers(usersWithCrop);
+    var message = "Addresses:<br><br>";
+    for (var index = 0; index < locationsArray.length; index++) {
+        document.getElementById(locationsArray[index].starId).style.visibility = 'hidden';
     }
- 
-    // for (var index = 0; index < userProfile.length; index++) {
-    //     if (produceLocationOptions.value == userProfile[index].crops) {
-    //         document.getElementById("star1").style.visibility = 'visible';
-    //         message += MarketLocation.address
-    //         updatePage();
-    //     } else if (produceLocationOptions.value == userProfile[index].crops) {
-    //         document.getElementById("star2").style.visibility = 'visible';
-    //         message += "1825 SW Broadway";
-    //         updatePage();
-    //     } else if (produceLocationOptions.value == userProfile[index].crops) {
-    //         document.getElementById("star3").style.visibility = 'visible';
-    //         message += "789 SE Tacoma St.";
-    //         updatePage();
-    //     } else if (produceLocationOptions.value == userProfile[index].crops) {
-    //         document.getElementById("star4").style.visibility = 'visible';
-    //         message += "2035 NE Alberta St";
-    //         updatePage();
-    //     } else if (produceLocationOptions.value == userProfile[index].crops) {
-    //         document.getElementById("star5").style.visibility = 'visible';
-    //         message += "3203 SE Woodstock Blvd";
-    //         updatePage();
-    //     } else {
-    //         document.getElementById("star1").style.visibility = 'hidden';
-    //         message = "No options available.";
-    //         updatePage();
-    //     }
-  //  }
+    for (var index = 0; index < foundNeighborhoods.length; index++) {
+        document.getElementById(foundNeighborhoods[index].starId).style.visibility = 'visible';
+        message += foundNeighborhoods[index].address;
+    }
+    updatePage(message);
+  }
 
 //variable which gets the drop down menu container
 var produceLocationOptions = null;
