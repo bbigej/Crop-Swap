@@ -9,32 +9,34 @@
   color: #78AB46;
   font-size: 185px;
   text-shadow: 5px 5px #031D44;
-  margin-bottom: 0px;
+  margin: 150px 25px 0px 25px;
 
 }
-.welcome-header {
+
+}
+/*.welcome-header {
   position: fixed;
   height: 130px;
   top: 0px;
   width: 100%;
   background-color: rgba(255,255,255,0.90);
 
-}
+}*/
+
 
 .welcomepage {
-    font-size: 33px;
+    font-size: 38px;
     line-height: 140%;
     text-shadow: none;
+    text-align: center;
     font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     font-weight: normal;
     /*text-transform: capitalize;*/
     color: #564E58;
     font-style: italic;
-    margin-bottom: 45px;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    margin: 45px auto 0px auto;
+    width: 750px;
+    }
 
 #new-user, #existingUser {
   box-shadow: none;
@@ -43,7 +45,7 @@
   border-radius:3px;
   font-size: 20px;
   text-align: center;
-  font-family: "Lora","open sans","HelveticaNeue-Light";
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 /*div that contains all login/button forms*/
 .white-box {
@@ -53,35 +55,50 @@
   padding:50px 50px 200px 50px;
 }
 
-#welcomelist {
-  font-family: "Lora","open sans","HelveticaNeue-Light";
-  font-size: 20px;
+.what_to_do{
+  display:flex;
+  justify-content: space-around;
+  background-color: #78AB46;
+  padding:50px 50px 100px 50px;
+  margin-top: 200px;
 }
 
+
+#welcomelist {
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 23px;
+  color: #564E58;
+  font-weight: normal;
+  list-style-type: none;
+  margin-right: 200px;
+}
 
 /*the area that lets the user login*/
 #login-user {
   border: 2px solid black;
   padding:20px;
-  margin-left: 500px;
   background-color: #EDA15A;
-  font-family: "Lora","open sans","HelveticaNeue-Light";
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 /*the button that triggers the new user form below*/
 #new-user {
   padding: 75px;
-  margin-left: 200px;
   background-color: #EDA15A;
   border-style: groove;
-  font-family: "Lora","open sans","HelveticaNeue-Light";
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
-#new-user form:hover {
+/*#new-user form:hover {
   transition: background-color .5s, padding .5s, border .25s 0.5s;
-  background-color: orange;
   border: 3px dashed orange;
 }
+
+#new_user.box-shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #purple;
+ -webkit-box-shadow: 3px 3px 5px 6px #purple;
+ box-shadow:         3px 3px 5px 6px #purple;*/
+ /*}*/
 
 /*the form container for new user form below  */
 /*#new-user-info {
@@ -89,14 +106,17 @@
 }*/
 
 /*the actual form that lets a user create a profile*/
-.newuserform {
-  display: block;
+#new-user-info {
+  font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 15px;
+  display: flex;
   position: relative;
+  width:550px;
    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
    -moz-animation: fadein 3s; /* Firefox < 16 */
    -ms-animation: fadein 3s; /* Internet Explorer */
    -o-animation: fadein 3s; /* Opera < 12.1 */
-  - animation: fadein 3s; ease in;
+   animation: fadein 3s; ease in;
 }
 
 @keyframes fadein {

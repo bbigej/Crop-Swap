@@ -6,7 +6,7 @@ var UserProfile = function (firstname, lastname, username, password, neighborhoo
   this.password = password;
   this.neighborhood = neighborhood;
   this.img = picture;
-  this.crops = cropIndexes;  
+  this.crops = cropIndexes;
 }
 
 //Array of user objects
@@ -20,15 +20,20 @@ localStorage.setItem("user-profiles", JSON.stringify(userProfile));
 
 //function to create a form that lets a new user add their profile
 var createAccountForm = function(){
-    var input = document.getElementById("new-user");
-    input.parentElement.removeChild(input); //removes the create an account button from the screen
-    //var login = document.getElementById("login_user");
-    var login = document.login_user;
-    login.setAttribute("class", "hide");
+    // var input = document.getElementById("new-user");
+    // input.parentElement.removeChild(input); //removes the create an account button from the screen
+    // //var login = document.getElementById("login_user");
+    // var login = document.login_user;
+    // login.setAttribute("class", "hide");
+
+    var container = document.getElementById("profile-forms");
+    container.innerHTML="";
+    var form= document.createElement("form")
+    form.setAttribute("id", "new-user-info");
+    container.appendChild(form);
 
     var space = document.createElement("br");  //create a break in HTML
     var fieldset = document.createElement("fieldset");
-    var form = document.getElementById("new-user-info"); //create the HTML form grouping
     header = document.createElement("legend"); //create the legend header
     header.innerText = "Your Profile";  /// tell it what you want the header to say
     fieldset.appendChild(header);  //append the the form with the header
@@ -38,7 +43,6 @@ var createAccountForm = function(){
     label1.innerText = "First Name:  "; /// tell it you what you want the label to say
     fieldset.appendChild(label1);   // append the label to the form
     input1 = document.createElement("input"); //create the input
-    input1.setAttribute("class", "newuserform"); // set each attribute...the css class
     input1.setAttribute("name", "firstName");    // set the name attribute...where the data will land
     fieldset.appendChild(input1);
     fieldset.appendChild(space.cloneNode());   //creates a break and allows us to do it repeatidly
@@ -47,7 +51,6 @@ var createAccountForm = function(){
     label2.innerText = "Last Name:  ";
     fieldset.appendChild(label2);
     input2 = document.createElement("input"); //create the input
-    input2.setAttribute("class", "newuserform"); // set each attribute...the css class
     input2.setAttribute("name", "lastName");    // set the name attribute...where the data will land
     fieldset.appendChild(input2);
     fieldset.appendChild(space.cloneNode());;
@@ -56,7 +59,6 @@ var createAccountForm = function(){
     label4.innerText = "Neighborhood:  ";
     fieldset.appendChild(label4);
     input4 = document.createElement("input"); //create the input
-    input4.setAttribute("class", "newuserform"); // set each attribute...the css class
     input4.setAttribute("name", "neighborhood");    // set the name attribute...where the data will land
     fieldset.appendChild(input4);
     fieldset.appendChild(space.cloneNode());
@@ -66,7 +68,6 @@ var createAccountForm = function(){
     label5.innerText = "User Name:  ";
     fieldset.appendChild(label5);
     input5 = document.createElement("input"); //create the input
-    input5.setAttribute("class", "newuserform"); // set each attribute...the css class
     input5.setAttribute("name", "userName");    // set the name attribute...where the data will land
     fieldset.appendChild(input5);
     fieldset.appendChild(space.cloneNode());
@@ -75,7 +76,6 @@ var createAccountForm = function(){
     label6.innerText = "Password:  ";
     fieldset.appendChild(label6);
     input6 = document.createElement("input"); //create the input
-    input6.setAttribute("class", "newuserform"); // set each attribute...the css class
     input6.setAttribute("name", "password");    // set the name attribute...where the data will land
     fieldset.appendChild(input6);
     fieldset.appendChild(space.cloneNode());
@@ -129,11 +129,3 @@ function loginUser() {
 
     }
 }
-
-//maybe not needed
-// function pageRefresh () {
-//   if (localStorage.getItem("userInfo") != null) {
-//     userProfile = JSON.parse(localStorage.getItem("userInfo"))
-//   }
-//   "load the page"
-// }
