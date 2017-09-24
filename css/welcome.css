@@ -10,19 +10,7 @@
   font-size: 185px;
   text-shadow: 5px 5px #031D44;
   margin: 150px 25px 0px 25px;
-
 }
-
-}
-/*.welcome-header {
-  position: fixed;
-  height: 130px;
-  top: 0px;
-  width: 100%;
-  background-color: rgba(255,255,255,0.90);
-
-}*/
-
 
 .welcomepage {
     font-size: 38px;
@@ -81,42 +69,49 @@
   font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
+fieldset {
+  background-color: #EBA15A;
+}
+
 /*the button that triggers the new user form below*/
 #new-user {
   padding: 75px;
   background-color: #EDA15A;
   border-style: groove;
+  box-shadow:2px 2px 4px 5px #564E58;
   font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
-/*#new-user form:hover {
-  transition: background-color .5s, padding .5s, border .25s 0.5s;
-  border: 3px dashed orange;
+#new-user:hover {
+  transition: border .15s .25s;
+  border: 4px dashed #032559;
 }
-
-#new_user.box-shadow {
-  -moz-box-shadow:    3px 3px 5px 6px #purple;
- -webkit-box-shadow: 3px 3px 5px 6px #purple;
- box-shadow:         3px 3px 5px 6px #purple;*/
- /*}*/
-
-/*the form container for new user form below  */
-/*#new-user-info {
-  display:float;
-}*/
 
 /*the actual form that lets a user create a profile*/
 #new-user-info {
   font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-size: 15px;
-  display: flex;
+  text-align: center;
+  display: float;
   position: relative;
-  width:550px;
+  width:350px;
    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
    -moz-animation: fadein 3s; /* Firefox < 16 */
    -ms-animation: fadein 3s; /* Internet Explorer */
    -o-animation: fadein 3s; /* Opera < 12.1 */
    animation: fadein 3s; ease in;
+}
+
+#new-user-info input {
+  float: right;
+}
+
+#new-user-info label{
+  float: left;
+}
+
+#new-user-info .new-profile-submit-button {
+  float: none;
 }
 
 @keyframes fadein {

@@ -1,0 +1,41 @@
+.swap {
+    height: 300px;
+    width: 400px;
+    border: solid black 1px;*/
+}
+
+.map  {
+    margin-top: 100px;
+    border: solid black 1px;
+}
+
+#main {
+    display: flex;
+    justify-content: space-around;
+} 
+
+#inv-intro {
+    color: #032559;
+    font-size: 38px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px white;
+}
+
+#address-paragraph {
+    color: #032559;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px white;
+}
+
+#fieldset {
+    color: #032559;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    height: 150px;
+    text-shadow: 0.5px 0.5px white;
+    border: none;
+}
