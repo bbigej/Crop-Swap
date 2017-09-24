@@ -14,7 +14,7 @@ var userProfile = [];
 
 userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "NorthEast", "images/oneeyedbunny.jpg", [0,1,4]));
 userProfile.push(new UserProfile("Tanya", "Griego", "T", "B", "Sellwood", "images/racoon.jpg", [1,2,4]));
-userProfile.push(new UserProfile("Sandra", "Ultreras", "S", "The Pearl", "images/ape.jpg", [0,3]));
+userProfile.push(new UserProfile("Sandra", "Ultreras", "S", "U", "The Pearl", "images/ape.jpg", [0,3]));
 userProfile.push(new UserProfile("Brian", "Bigej", "B", "B", "PSU", "images/yak.jpg", [0,2,3,4]));
 localStorage.setItem("user-profiles", JSON.stringify(userProfile));
 
