@@ -32,6 +32,8 @@
   height: 210px;
   object-fit: contain; /* this only works on the image itself*/
   object-position: top center;
+  filter: drop-shadow(16px 16px 5px #564E58);
+  opacity: 75;
 }
 
 #profile-container span {
@@ -45,6 +47,14 @@
 #produce-table {
   margin-left: 175px;
 }
+#drop-produce {
+  font-size: 15px;
+}
+
+#produce-table {
+  margin-left: 175px;
+}
+
 #drop-produce {
   font-size: 15px;
 }
