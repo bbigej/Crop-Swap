@@ -11,9 +11,11 @@ var UserProfile = function (firstname, lastname, username, password, neighborhoo
 
 //Array of user objects
 var userProfile = [];
-userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "Sellwood", "", [0, 1]));
-userProfile.push(new UserProfile("Bryan", "Bigej", "A", "B", "Northeast", "", [1, 2]));
-userProfile.push(new UserProfile("John", "Doe", "A", "B", "The Pearl", "", [3, 4, 5]));
+
+userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "NorthEast", "images/oneeyedbunny.jpg", [0,1,4]));
+userProfile.push(new UserProfile("Tanya", "Griego", "T", "B", "Sellwood", "images/racoon.jpg", [1,2,4]));
+userProfile.push(new UserProfile("Sandra", "Ultreras", "S", "The Pearl", "images/ape.jpg", [0,3]));
+userProfile.push(new UserProfile("Brian", "Bigej", "B", "B", "PSU", "images/yak.jpg", [0,2,3,4]));
 localStorage.setItem("user-profiles", JSON.stringify(userProfile));
 
 //function to create a form that lets a new user add their profile
@@ -95,9 +97,11 @@ var createAccountForm = function(){
     var newNeighborhood = form.elements["neighborhood"].value;
     var newUserName = form.elements["userName"].value;
     var newUserPassword = form.elements["password"].value;
-    userProfile.push(new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword));
-    localStorage.setItem("userInfo", JSON.stringify(userProfile)); //adds to local storage
+    var currentUser = new UserProfile(newFirstName, newLastName, newNeighborhood, newUserName, newUserPassword);
+    userProfile.push(currentUser);
+    localStorage.setItem("currentUserKey", JSON.stringify(currentUser)); //adds to local storage
     document.getElementById("new-user-info").innerHTML = ""; //removes the form from the screen
+    console.log("newFirstName");
   //  var login = document.getElementById("login_user");
     var login = document.login_user;
     login.setAttribute("class", ""); //unhides the user login
@@ -120,7 +124,9 @@ function loginUser() {
       form.appendChild(instructions);
       createAccountForm ();
       } else {
-      window.location = "profile.html"
+      localStorage.setItem("currentUserKey", JSON.stringify(userMatch)); //adds to local storage
+      window.location = "profile.html";
+
     }
 }
 

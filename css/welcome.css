@@ -1,0 +1,105 @@
+.quote {
+  font-family: "open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  /*font-family: 'Encode Sans Semi Condensed', sans-serif;*/
+  text-transform: uppercase;
+  line-height: 105%;
+  letter-spacing: 3px;
+  font-weight: 100;
+  text-align: center;
+  color: #78AB46;
+  font-size: 185px;
+  text-shadow: 5px 5px #031D44;
+  margin-bottom: 0px;
+
+}
+.welcome-header {
+  position: fixed;
+  height: 130px;
+  top: 0px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.90);
+
+}
+
+.welcomepage {
+    font-size: 33px;
+    line-height: 140%;
+    text-shadow: none;
+    font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-weight: normal;
+    /*text-transform: capitalize;*/
+    color: #564E58;
+    font-style: italic;
+    margin-bottom: 45px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+#new-user, #existingUser {
+  box-shadow: none;
+  background: none;
+  border: 2px solid black;
+  border-radius:3px;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Lora","open sans","HelveticaNeue-Light";
+}
+/*div that contains all login/button forms*/
+.white-box {
+  display:flex;
+  justify-content: space-around;
+  background-color: #F2EFEA;
+  padding:50px 50px 200px 50px;
+}
+
+#welcomelist {
+  font-family: "Lora","open sans","HelveticaNeue-Light";
+  font-size: 20px;
+}
+
+
+/*the area that lets the user login*/
+#login-user {
+  border: 2px solid black;
+  padding:20px;
+  margin-left: 500px;
+  background-color: #EDA15A;
+  font-family: "Lora","open sans","HelveticaNeue-Light";
+}
+
+/*the button that triggers the new user form below*/
+#new-user {
+  padding: 75px;
+  margin-left: 200px;
+  background-color: #EDA15A;
+  border-style: groove;
+  font-family: "Lora","open sans","HelveticaNeue-Light";
+}
+
+#new-user form:hover {
+  transition: background-color .5s, padding .5s, border .25s 0.5s;
+  background-color: orange;
+  border: 3px dashed orange;
+}
+
+/*the form container for new user form below  */
+/*#new-user-info {
+  display:float;
+}*/
+
+/*the actual form that lets a user create a profile*/
+.newuserform {
+  display: block;
+  position: relative;
+   -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadein 3s; /* Firefox < 16 */
+   -ms-animation: fadein 3s; /* Internet Explorer */
+   -o-animation: fadein 3s; /* Opera < 12.1 */
+  - animation: fadein 3s; ease in;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
