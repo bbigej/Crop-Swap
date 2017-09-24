@@ -1,7 +1,5 @@
 
-//==========Produce Array==========
-var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash"];
-//==========Produce Array==========
+var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash", "Lettuce", "Cucumbers", "Tomatoes"];
 var currentUser = null;
 
 //function to create a container that hosts the Signed In user First Name, Last Name and Picture
