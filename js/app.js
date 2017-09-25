@@ -1,4 +1,4 @@
-//Object constructor for new
+//Object constructor for a new user
 var UserProfile = function (firstname, lastname, username, password, neighborhood, picture, cropIndexes){
   this.firstName = firstname;
   this.lastName = lastname;
@@ -9,22 +9,16 @@ var UserProfile = function (firstname, lastname, username, password, neighborhoo
   this.crops = cropIndexes;
 }
 
-//Array of user objects
+//Array of user objects with test data
 var userProfile = [];
-userProfile.push(new UserProfile("Allyson", "Short", "A", "B", "NorthEast", "images/oneeyedbunny.jpg", [0,1,4,6,7]));
-userProfile.push(new UserProfile("Tanya", "Griego", "T", "B", "Sellwood", "images/racoon.jpg", [1,2,4,5,6]));
-userProfile.push(new UserProfile("Sandra", "Ultreras", "S", "U", "The Pearl", "images/ape.jpg", [0,3,7]));
-userProfile.push(new UserProfile("Bryan", "Bigej", "B", "B", "PSU", "images/yak.jpg", [0,2,3,4,7]));
+userProfile.push(new UserProfile("Allyson", "Short", "Allyson", "Short", "NorthEast", "images/oneeyedbunny.jpg", [0,1,4,6,7]));
+userProfile.push(new UserProfile("Tanya", "Griego", "Tanya", "Griego", "Sellwood", "images/racoon.jpg", [1,2,4,5,6,7]));
+userProfile.push(new UserProfile("Sandra", "Ultreras", "Sandra", "Ultreras", "The Pearl", "images/ape.jpg", [0,3,5,7]));
+userProfile.push(new UserProfile("Bryan", "Bigej", "Brian", "Bigej", "PSU", "images/yak.jpg", [0,2,3,4,7]));
 localStorage.setItem("user-profiles", JSON.stringify(userProfile));
 
 //function to create a form that lets a new user add their profile
 var createAccountForm = function(instructions){
-    // var input = document.getElementById("new-user");
-    // input.parentElement.removeChild(input); //removes the create an account button from the screen
-    // //var login = document.getElementById("login_user");
-    // var login = document.login_user;
-    // login.setAttribute("class", "hide");
-
     var container = document.getElementById("profile-forms");
     container.innerHTML="";
     var form= document.createElement("form")
@@ -93,7 +87,7 @@ var createAccountForm = function(instructions){
     fieldset.appendChild(input5);
 }
 
-// // function to submit user details into the user objects and clear the new user form from the screen
+// function to submit user details into the user objects and clear the new user form from the screen
   function submitFormDetails(){
     var form = document.forms["new-user-form"];
     var newFirstName = form.elements["firstName"].value;
@@ -112,7 +106,7 @@ var createAccountForm = function(instructions){
     window.location = "profile.html"
   }
 
-//this is a function to validate the username/password inputs
+//function to validate the username/password inputs to see if the user has an account
 function loginUser() {
   var form = document.login_user;
   var userNameInput = form.Username.value;
@@ -127,6 +121,5 @@ function loginUser() {
       } else {
       localStorage.setItem("currentUserKey", JSON.stringify(userMatch)); //adds to local storage
       window.location = "profile.html";
-
     }
 }
