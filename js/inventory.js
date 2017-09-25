@@ -6,18 +6,20 @@ var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash", "Lett
 var locationsArray =[];
 
 //constructor function to build various locations
-var MarketLocation = function (neighborhood, address, starId) {
+var MarketLocation = function (neighborhood, address, day, time, starId) {
     this.neighborhood = neighborhood;
     this.address = address;
-    this.starId = starId
+    this.day = day;
+    this.time = time;
+    this.starId = starId;
 }
 
 //locations pushed into the array
-locationsArray.push(new MarketLocation("The Pearl", "123 Marshall St. <br><br>", "star1"));
-locationsArray.push(new MarketLocation("PSU", "1825 SW Broadway <br><br>", "star2"));
-locationsArray.push(new MarketLocation("Sellwood", "789 SE Tacoma St. <br><br>", "star3"));
-locationsArray.push(new MarketLocation("Northeast", "2035 NE Alberta St <br><br>", "star4"));
-locationsArray.push(new MarketLocation("Southeast","3203 SE Woodstock Blvd <br><br>", "star5",));
+locationsArray.push(new MarketLocation("The Pearl", "123 Marshall St.","Saturday", "10AM-2PM <br><br>", "star1"));
+locationsArray.push(new MarketLocation("PSU", "1825 SW Broadway", "Sunday", "12PM-4PM <br><br>", "star2"));
+locationsArray.push(new MarketLocation("Sellwood", "789 SE Tacoma St.", "Thurday", "6PM-9PM <br><br>", "star3"));
+locationsArray.push(new MarketLocation("Northeast", "2035 NE Alberta St", "Monday", "5:30PM-9PM <br><br>", "star4"));
+locationsArray.push(new MarketLocation("Southeast","3203 SE Woodstock Blvd", "Saturday", "11AM-1PM <br><br>", "star5",));
 
 
 //code to add text to the paragraph
@@ -67,7 +69,9 @@ function showLocations() {
     for (var index = 0; index < foundNeighborhoods.length; index++) {
         document.getElementById(foundNeighborhoods[index].starId).style.visibility = 'visible';
         message += foundNeighborhoods[index].neighborhood + ": <br>";
-        message += foundNeighborhoods[index].address;
+        message += foundNeighborhoods[index].address + "<br>";
+        message += foundNeighborhoods[index].day + "<br>";
+        message += foundNeighborhoods[index].time;
     }
     updatePage(message);
   }
