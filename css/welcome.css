@@ -65,6 +65,7 @@
 #login-user {
   border: 2px solid black;
   padding:20px;
+  box-shadow:2px 2px 4px 5px #D3D3D3;
   background-color: #EDA15A;
   font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
@@ -78,7 +79,7 @@ fieldset {
   padding: 75px;
   background-color: #EDA15A;
   border-style: groove;
-  box-shadow:2px 2px 4px 5px #564E58;
+  box-shadow:2px 2px 4px 5px #D3D3D3;
   font-family: "Lora","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
