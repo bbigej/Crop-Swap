@@ -17,7 +17,7 @@ var MarketLocation = function (neighborhood, address, day, time, starId) {
 //locations pushed into the array
 locationsArray.push(new MarketLocation("The Pearl", "123 Marshall St.","Saturday", "10AM-2PM <br><br>", "star1"));
 locationsArray.push(new MarketLocation("PSU", "1825 SW Broadway", "Sunday", "12PM-4PM <br><br>", "star2"));
-locationsArray.push(new MarketLocation("Sellwood", "789 SE Tacoma St.", "Thurday", "6PM-9PM <br><br>", "star3"));
+locationsArray.push(new MarketLocation("Sellwood", "789 SE Tacoma St.", "Thursday", "6PM-9PM <br><br>", "star3"));
 locationsArray.push(new MarketLocation("Northeast", "2035 NE Alberta St", "Monday", "5:30PM-9PM <br><br>", "star4"));
 locationsArray.push(new MarketLocation("Southeast","3203 SE Woodstock Blvd", "Saturday", "11AM-1PM <br><br>", "star5",));
 
