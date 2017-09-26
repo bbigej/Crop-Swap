@@ -1,11 +1,10 @@
-
+//array with fake data 
 var produceArray = ["Carrots", "Apples", "Kale", "Strawberries", "Squash", "Lettuce", "Cucumbers", "Tomatoes"];
 var currentUser = null;
 
-//function to create a container that hosts the Signed In user First Name, Last Name and Picture
+//function to create a container that holds the Signed In user First Name, Last Name, Picture and Neighborhood
 function profileContainer() {
-    currentUser = JSON.parse(localStorage.getItem("currentUserKey"));
-    console.log(currentUser);
+    currentUser = JSON.parse(localStorage.getItem("currentUserKey"));//get info from localStorage
     if (currentUser != null) {
       var container = document.getElementById("profile-container");
 
@@ -70,21 +69,18 @@ profileContainer()
 function handlePicture (event) {
     if (event.target.files.length > 0) {
       var file = event.target.files[0];
-      console.log(file);
-      var reader = new FileReader();
-      reader.readAsDataURL(file);
+      var reader = new FileReader(); //creates a new file reader object
+      reader.readAsDataURL(file); //method is used to read the contents of the image file.
       reader.addEventListener("load", function() {
-        var base64image = reader.result;
-        console.log(base64image);
+        var base64image = reader.result;  //result attribute contains the data as a URL representing the file's data as a base64 encoded string.
         document.getElementById("user-picture").src = base64image;
-        currentUser.img = base64image;
-        localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
+        currentUser.img = base64image; //relates the image of current user with its base64image
+        localStorage.setItem("currentUserKey", JSON.stringify(currentUser)); //updates localStorage
       })
     }
 }
 
 function handleFirstName (event) {
-  console.log(event.target.innerText); //this target the p element
   currentUser.firstName = event.target.innerText;
   localStorage.setItem("currentUserKey", JSON.stringify(currentUser));
 }
@@ -119,7 +115,6 @@ function dropCrop (crop, index) {
 function handleAdd() {
   var cropSelected = document.getElementById("drop-produce");
   var index = parseInt(cropSelected.value);
-  console.log(cropSelected.value);
   currentUser.crops.push(index);
   cropSelected.innerHTML = "";
   document.getElementById('user-produce').innerHTML = "";
@@ -130,10 +125,9 @@ var addCropDrop = document.getElementById("addCrop");
 addCropDrop.addEventListener("click", handleAdd);
 
 function handleRemove(event) {
-  var produceIndex = parseInt(event.target.dataset.index);
-  var cropIndex = currentUser.crops.indexOf(produceIndex);
-  console.log(currentUser);
-  currentUser.crops.splice(cropIndex, 1);
+  var produceIndex = parseInt(event.target.dataset.index); //dtatset property allows access to all data attributes set on the element
+  var cropIndex = currentUser.crops.indexOf(produceIndex); //method returns the index within the calling String object
+  currentUser.crops.splice(cropIndex, 1); //method to change the content of the array to add new element
   document.getElementById('user-produce').innerHTML = "";
   document.getElementById("drop-produce").innerHTML = "";
   buildTable();
@@ -169,7 +163,7 @@ function buildTable() {
       }
     }
   } else {
-    location.assign("welcome.html");
+    location.assign("welcome.html"); //has to have a signed in user or it takes back to welcome page
   }
 }
 buildTable();
